@@ -1,0 +1,156 @@
+.page{
+    text-align: justify;
+    background-color: rgb(254, 241, 198);
+    padding: 20px;
+    margin-right: 9px;
+}
+.upload-logo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo-text {
+    font-size: 21px;
+    font-weight: lighter;
+    margin-top: 30px ;
+    margin-bottom: 20px;
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 490px;
+    border: 1px solid rgb(230, 227, 227);
+  }
+  
+  .upload-section input[type="file"] {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Added styles for placeholder */
+    font-style: italic;
+    opacity: 0.5; /* Adjust opacity for better visibility */
+    background-color: rgb(254, 241, 198);
+    margin: 20px 20px;
+    border-radius: 8px;
+  }
+  .upload-banner {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin-right:10px ;
+  }
+  
+  .banner-text {
+    font-size: 21px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .upload-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .upload-sections input[type="file"] {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-style: italic;
+    opacity: 0.5;
+  }
+  
+  .upload-sections input[type="file"]:focus {
+    outline: none;
+    border-color: #333;
+    opacity: 1;
+  }
+  
+  .upload-sections input[type="file"]::-webkit-file-upload-button {
+    display: none;
+  }
+  
+  .upload-sections p {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  .color-picker {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .color-picker label {
+    font-size: 1rem;
+    color: #aeadad;
+  }
+  
+  .color-picker input[type="color"] {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .upload-section input[type="file"]:focus {
+    /* Added styles for focus state */
+    outline: none;
+    border-color: #333;
+    opacity: 1; /* Make placeholder text fully visible on focus */
+  }
+  
+  .upload-section input[type="file"]::-webkit-file-upload-button {
+    /* Hide default file upload button (limited browser support) */
+    display: none;
+  }
+  .section{
+    border: 1px solid rgb(230, 228, 228);
+    padding: 25px;
+  }
+  .containern {
+    width: 470px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .radioGroup {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  
+  .radioGroup label {
+    margin-right: 10px;
+  }
+  
+  .inputContainer {
+    margin-top: 20px;
+  }
+  
+  input[type='text'],
+  input[type='file'],
+  button {
+    display: block;
+    margin-top: 10px;
+  }
+  .button{
+    border: 1px solid #cccaca;
+    width: 460px;
+    background-color: #fef3cd;
+    font-size: 15px;
+  }
+  .input{
+    width: 428px
+  }
+  .input input[type="file"]::-webkit-file-upload-button {
+    display: none;
+  }

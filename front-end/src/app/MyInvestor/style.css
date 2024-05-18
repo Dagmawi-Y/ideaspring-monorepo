@@ -1,0 +1,74 @@
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .item {
+    width: 200px; 
+    height: 30px; 
+    border: 1px solid #f9ac54; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#f9ac54;
+    padding: 0 40px;
+    cursor: pointer; 
+  }
+
+  .item.active {
+    background-color: #f9ac54; /* Set the background color for the active item */
+    color: white; /* Set the text color for the active item */
+  }
+  .warnning{
+    background-color: #ffe9cf;
+    padding: 25px 0;
+    color: #faa23c;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .card {
+    width: 300px;
+    height: 450px;
+    background-color: #fcf0e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    border: 1px dashed;
+    border-color: rgb(0, 0, 0);
+    margin-left: 420px;
+
+  }
+  
+  .card-text {
+    font-size: 23px;
+    font-weight: lighter;
+    color: #b9b8b8;
+    margin-bottom: 1px;
+  }
+  
+  .add-pitch-button {
+    background-color: #f9ac54;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  .button-container {
+    display: flex;
+    align-items: center;
+  }
+  .b{
+    margin-left: 40px;
+    font-size: large;
+  }

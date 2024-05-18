@@ -1,0 +1,19 @@
+.sidebarr {
+    width: 15%;
+    position: fixed;
+    border-right: 2px solid #e5e5e5;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
+    overflow: visible;
+  }
+  
+  .logo-containerr {
+    margin-bottom: 1rem;
+  }
+  
+  .logo-containerr h1 {
+    margin-top: 1.3rem;
+  }

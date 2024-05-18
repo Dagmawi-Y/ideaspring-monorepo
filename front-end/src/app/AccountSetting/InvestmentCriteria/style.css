@@ -1,0 +1,112 @@
+/* style1.css */
+.containerg {
+    display: flex;
+    flex-direction: column;
+    width: 700px; /* Full viewport width */
+    min-height: 100vh; /* Stretch to viewport height */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light gray background */
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff; /* White header background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for header */
+  }
+  
+  .header img {
+    width: 100px; /* Adjust logo width as needed */
+    height: auto;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: wrap; /* Wrap navigation items on smaller screens */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff; /* White navigation background */
+    border-top: 1px solid #ddd; /* Border between header and navigation */
+    border-bottom: 1px solid #ddd; /* Border between navigation and content */
+  }
+  
+  .nav-item {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none; /* Remove border as it's handled by parent element */
+    background-color: #fff; /* Inherit background color */
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer; /* Indicate clickable behavior */
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #333; /* Dark text color */
+    display: block;
+  }
+  
+  .nav-item a:hover {
+    background-color: #eee; /* Light background on hover */
+  }
+  
+  .content {
+    flex: 1; /* Allow content area to fill remaining space */
+    padding: 20px;
+    background-color: #fff; /* White content background */
+  }
+  
+  form {
+    display: flex; /* Arrange form elements horizontally */
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+  }
+  
+  label {
+    display: block; /* Display labels on separate lines */
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%; /* Make text inputs fill the available space */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    background-color: #333; /* Dark green button color */
+    color: #fff; /* White button text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate clickable behavior */
+    margin-top: 15px; /* Add some spacing above the button */
+  }
+  label,input{font-weight: 10;}

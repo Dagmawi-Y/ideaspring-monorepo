@@ -1,0 +1,65 @@
+
+  .background-section {
+    max-width: 670px;
+    padding: 30px;
+    border-radius: 4px;
+    background-color: #ffffff; 
+    margin-left: 250px;
+    margin-top: 20px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Center align the heading */
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #333; /* Darker text color */
+  }
+  
+  .background-section {
+    margin-bottom: 20px;
+  }
+  
+  .background-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .background-input {
+    display: block;
+    width: 100%; /* Make textarea full width */
+    padding: 10px 15px;
+    border: 2px solid #f1f0f0; /* Light border */
+    border-radius: 4px;
+    font-size: 14px;
+    resize: vertical; /* Allow resizing the textarea vertically */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    height: 100px;
+  }
+  
+  .link {
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: #ccc;
+  }
+  .h1 {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .h2 {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .h1,
+.h2 {
+  text-align: center;
+}

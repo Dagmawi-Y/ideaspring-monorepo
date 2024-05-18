@@ -1,0 +1,46 @@
+.page{
+    text-align: justify;
+    background-color: rgb(254, 241, 198);
+    padding: 20px;
+    margin-right: 9px;
+    color: rgb(222, 126, 0);
+}
+.upload-logo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo-text {
+    font-size: 21px;
+    font-weight: lighter;
+    margin-top: 30px ;
+    margin-bottom: 20px;
+  }
+  
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 490px;
+    border: 1px solid rgb(230, 227, 227);
+  }
+  
+  .upload-section input[type="file"] {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Added styles for placeholder */
+    font-style: italic;
+    opacity: 0.5; /* Adjust opacity for better visibility */
+    background-color: rgb(254, 241, 198);
+    margin: 20px 20px;
+    border-radius: 8px;
+  }
+  .file{
+    font-size: small;
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: 20px;
+    color: #989797;
+  }

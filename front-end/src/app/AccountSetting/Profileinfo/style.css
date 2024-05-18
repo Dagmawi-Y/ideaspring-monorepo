@@ -1,0 +1,56 @@
+
+  
+  .instructions {
+    margin-bottom: 1rem;
+  }
+  
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  
+  .keyword {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    height: 25px;
+  }
+  
+  .keyword input {
+    border: none;
+    outline: none;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+  }
+  
+  .keyword button {
+    background-color: #f9ac54;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .save-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .cont{
+    border: 1px solid #ddd;
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    margin-top: 20px;
+  }

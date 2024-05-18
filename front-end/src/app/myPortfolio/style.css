@@ -1,0 +1,58 @@
+
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    margin-left: 200px;
+  }
+
+  
+  .welcome-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .counters {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .counters p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+ .top-section,
+  .investment-stats{
+    display: flex;
+  }
+  
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .investment-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .stat-title,
+.stat-value {
+  text-align: center;
+  margin: 5px;
+  padding-left: 20px;
+}
+
+.stat-title {
+  font-weight: bold;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+}

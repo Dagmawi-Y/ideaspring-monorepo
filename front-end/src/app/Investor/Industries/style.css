@@ -1,0 +1,81 @@
+.industry-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff; /* Optional background color from image */
+    border-radius: 8px; /* Rounded corners as seen in the image */
+  }
+  .industry {
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    margin: 0.5rem; /* Adjust margin for spacing between buttons */
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center; /* Center button text */
+    width: calc(25% - 1.5rem); /* Adjust width for 4 buttons in a row with some margin */
+  }
+  .industry-selector .h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333; /* Darker heading text for contrast */
+  }
+  .industry-selector .h2 {
+    font-size: 1.5rem;
+    margin-bottom: 39px;
+    color: #333; /* Darker heading text for contrast */
+  }
+  
+  .industries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Spacing between industry options */
+    
+  }
+  
+  .industry-option {
+    display: flex;
+    align-items: center;
+    background-color: #fdf9f9; /* White background for options */
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0.1, 0.1, 0.1, 0.1); /* Subtle shadow for depth */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .industry-option input {
+    margin-right: 0.5rem;
+    accent-color: #333; /* Checkbox color to match text */
+  }
+  
+  .industry-option label {
+    font-size: 1.1rem; /* Slightly smaller font for options */
+    color: #333; /* Text color to match heading */
+  }
+  
+  .industry-option:hover {
+    background-color: #f2f2f2; /* Lighter background on hover */
+  }
+  
+  .industry-option input:checked + label {
+    font-weight: bold; /* Bold text for selected options */
+  }
+  .h1 {
+    font-weight: bolder;
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  
+  .h2 {
+    font-size: 25px;
+    font-weight: lighter;
+  }
+  .h1,
+.h2 {
+  text-align: center;
+}
+  

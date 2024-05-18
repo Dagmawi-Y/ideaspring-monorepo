@@ -1,0 +1,91 @@
+.profile-containerss {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: -10px;
+    width: 380px;
+    padding: 20px;
+    color: #353535;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .profile-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .profile-img {
+    margin-right: 20px;
+  }
+  
+  .profile-info {
+    flex: unset;
+  }
+  
+  .profile-info h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .investment-range,
+  .expertise {
+    margin-bottom: 20px;
+  }
+  
+  .investment-range h3,
+  .expertise h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .expertise p {
+    margin-bottom: 5px;
+  }
+  
+  .profile-buttons {
+    display: flex;
+    /* Remove center alignment */
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 20px;
+  }
+  
+  .profile-buttons button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .location-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .location-icon {
+    /* Style your location icon here */
+    margin-right: 5px;
+    font-size: 16px; /* Adjust size as needed */
+  }
+  
+  .favorite-btn {
+    background: none; /* Remove default button styles */
+    border: none; /* Remove default button styles */
+    padding: 0; /* Remove default button padding */
+    cursor: pointer; /* Indicate clickable behavior */
+  }
+  
