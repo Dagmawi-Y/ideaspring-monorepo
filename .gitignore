@@ -1,7 +1,7 @@
 # compiled output
 /dist
 /node_modules
-
+./api/dist
 # Logs
 logs
 *.log
@@ -11,7 +11,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .env
-
+playground
+./playground
 # OS
 .DS_Store
 

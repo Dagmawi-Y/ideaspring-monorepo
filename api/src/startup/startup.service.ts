@@ -12,10 +12,14 @@ import {
   PrismaClientValidationError,
 } from '@prisma/client/runtime/library';
 import { DealDetails, PitchDeal, Team } from '@prisma/client';
+import { NotificationService } from 'src/notification/notification.service';
 
 @Injectable()
 export class StartupService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private notificationService: NotificationService,
+  ) {}
 
   async createStartup(createStartupDto: CreateStartupDto, userId: number) {
     const {
@@ -58,6 +62,11 @@ export class StartupService {
         tax_relief: taxRelief ? { connect: { id: taxRelief } } : undefined,
       },
     });
+
+    await this.notificationService.createNotification(
+      userId,
+      "Congratulations! You've submitted a new pitch.",
+    );
 
     return {
       msg: 'Startup created successfully',
