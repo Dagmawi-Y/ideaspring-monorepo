@@ -1,7 +1,7 @@
 "use client"
 import "./style.css";
 import React, { useState } from 'react';
-
+import { FaChevronRight } from 'react-icons/fa';
 const Card = () => {
   const [selectedInvestor, setSelectedInvestor] = useState(null);
 
@@ -29,7 +29,7 @@ const Card = () => {
           <p className="card-text">Then search the investors and get nudging!</p>
           <div className="button-container">
             <button className="add-pitch-button">+</button>
-            <i className="fas fa-chevron-right arrow"></i>
+            <FaChevronRight className="arrow" />
           </div>
         </div>
       );
@@ -39,8 +39,6 @@ const Card = () => {
   return (
     <div className="card-container">
       {renderInvestorCard()}
-
-      {/* Render other investor cards here */}
     </div>
   );
 }

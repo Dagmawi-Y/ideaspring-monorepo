@@ -43,7 +43,7 @@ export default function Home() {
       </button>
       {showDropdownButtons && (
         <div className="dropdown-container">
-          <a href="/Registration?role=entrepreneur" className="dropdown-button">
+          <a href="/startup/Registration" className="dropdown-button">
             As Entrepreneur
           </a>
           <a href="/Registration?role=investor" className="dropdown-button">

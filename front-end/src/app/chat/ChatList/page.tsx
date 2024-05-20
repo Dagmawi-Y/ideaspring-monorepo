@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import ChatListItems from "./chatListItem";
+import { FaPlus, FaEllipsisH, FaSearch } from 'react-icons/fa';
 
 export default class ChatList extends Component {
   allChatUsers = [
@@ -95,20 +96,20 @@ export default class ChatList extends Component {
     return (
       <div className="main__chatlist">
         <button className="btn">
-          <i className="fa fa-plus"></i>
+        <FaPlus className="plus-icon" />
           <span>New conversation</span>
         </button>
         <div className="chatlist__heading">
           <h2>Chats</h2>
           <button className="btn-nobg">
-            <i className="fa fa-ellipsis-h"></i>
+          <FaEllipsisH className="ellipsis-icon" />
           </button>
         </div>
         <div className="chatList__search">
           <div className="search_wrap">
             <input type="text" placeholder="Search Here" required />
             <button className="search-btn">
-              <i className="fa fa-search"></i>
+            <FaSearch className="search-icon" />
             </button>
           </div>
         </div>

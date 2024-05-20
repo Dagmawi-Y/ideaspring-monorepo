@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import Navigation from "./Navigation/page";
-import Products from "./products/page";
+import Products from "./startups/page";
 import products from "./db/data";
 import Recommended from "./Recommended/page";
 import Sidebar from "./side/page";

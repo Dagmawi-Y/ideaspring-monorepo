@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import SignaturePad from 'react-signature-pad-wrapper';
 import DatePicker from 'react-datepicker';

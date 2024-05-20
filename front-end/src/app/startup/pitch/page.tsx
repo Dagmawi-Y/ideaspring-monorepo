@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import "./styl.css";
 import { FaBars, FaTimes, FaQrcode, FaLink, FaStream, FaCalendar, FaQuestionCircle, FaSlidersH, FaEnvelope } from 'react-icons/fa';
-import Form from "./Form/page"; 
-import Pitch from "./CompanyInfo/page"
+import Form from "./CompanyInformation/page"; 
+import Pitch from "./PitchandDeal/page"
 import NavBar from "../NavBar/page"
 import Team from "./Team/page"
 import Picture from "./image/page"

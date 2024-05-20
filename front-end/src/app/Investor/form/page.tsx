@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import First from "../first/page";
-import Second from "../formtwo/formtwo";
+import Second from "../RangeSlider/page";
 import Third from "../RangeSlider/page";
 import Fourth from "../formtwo/formtwo";
 import './style.css'; // Import the CSS file for styling

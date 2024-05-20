@@ -3,7 +3,7 @@ import "./style.css"
 
 const IndexPage = () => {
   return (
-    <div className="container">
+    <div className="containeru">
       <h1 className="h1">What's your professional background?</h1>
       <h2 className="h2">
         We use this information to prioritize your profile for the best investment deals. The more specific you can be, the better!

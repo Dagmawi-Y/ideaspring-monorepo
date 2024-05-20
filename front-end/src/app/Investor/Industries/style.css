@@ -1,3 +1,17 @@
+.h1 {
+  font-weight: bolder;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.h2 {
+  font-size: 25px;
+  font-weight: lighter;
+}
+.h1,
+.h2 {
+text-align: center;
+}
 .industry-selector {
     display: flex;
     flex-direction: column;
@@ -5,6 +19,7 @@
     padding: 2rem;
     background-color: #ffffff; /* Optional background color from image */
     border-radius: 8px; /* Rounded corners as seen in the image */
+    margin-top: -30px;
   }
   .industry {
     background-color: #fff;
@@ -64,18 +79,23 @@
   .industry-option input:checked + label {
     font-weight: bold; /* Bold text for selected options */
   }
-  .h1 {
-    font-weight: bolder;
-    font-size: 35px;
-    margin-bottom: 15px;
+ 
+  .industry-selector {
+    /* Adjust padding/margin as needed */
+    padding: 20px;
   }
   
-  .h2 {
-    font-size: 25px;
-    font-weight: lighter;
+  .industries {
+    display: flex; /* Arrange industries horizontally */
+    flex-wrap: wrap; /* Wrap industries if they overflow */
+    justify-content: space-between; /* Distribute evenly */
+    /* Adjust gap for desired spacing between options */
+    gap: 10px;
   }
-  .h1,
-.h2 {
-  text-align: center;
-}
+  
+  .industry-option {
+    /* Adjust width as needed for 3 columns */
+    width: calc(100% / 3 - 70px); /* Account for gap */
+    /* Adjust styles for individual options */
+  }
   

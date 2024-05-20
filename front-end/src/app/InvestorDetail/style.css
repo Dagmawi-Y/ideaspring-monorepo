@@ -1,0 +1,210 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+  }
+  
+  .profile {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .leftColumn {
+    padding: 20px;
+    width: 40%;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .profilePic {
+    border-radius: 50%;
+  }
+  
+  .name {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .flag {
+    font-size: 34px;
+  }
+  
+  .location {
+    color: #888;
+    font-size: 15px;
+  }
+  .investmentRange p {
+    font-size: 17px;
+  }
+  .investmentRange {
+    margin: 20px 0;
+  }
+  
+  .details {
+    color: #666;
+    font-size: 17px;
+    justify-content: flex-start;
+  }
+  
+  .details p {
+    margin: 10px 0;
+  }
+  
+  .rightColumn {
+    padding: 20px;
+    width: 60%;
+  }
+  
+  .nudgeButton {
+    background-color: #faa823;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+    margin-top: 10px;
+  }
+  
+  .nudgeButton:hover {
+    background-color: #a5a4a3;
+  }
+  
+  .aboutMe {
+    margin-top: 90px;
+  }
+  .expertise{
+    margin-top: 40px;
+  }
+  
+  .aboutMe h2, .expertise h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .aboutMe p, .expertise p {
+    color: #444;
+    font-size:18px;
+    line-height: 1.5;
+  }
+  .containers {
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subSection {
+    margin-top: 20px;
+  }
+  
+  .subSection h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .industries {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .industry {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .industry i {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .industry p {
+    font-size: 16px;
+    color: #333;
+  }
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerr {
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 100vh;
+    max-width: 1000px;
+    width: 100%;
+  }
+  
+  .sectione {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .subSectione {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .subSectione:last-child {
+    margin-right: 0;
+  }
+  
+  .subSectione h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .box {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tag {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }

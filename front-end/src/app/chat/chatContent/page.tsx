@@ -1,5 +1,6 @@
 "use client"
 import React, { Component, useState, createRef, useEffect } from "react";
+import { FaPaperPlane, FaCog,FaPlus } from 'react-icons/fa';
 
 import "./style.css";
 import Avatar from "../ChatList/avatar";
@@ -111,7 +112,7 @@ export default class ChatContent extends Component {
           <div className="blocks">
             <div className="settings">
               <button className="btn-nobg">
-                <i className="fa fa-cog"></i>
+              <FaCog className="cog-icon" />
               </button>
             </div>
           </div>
@@ -135,7 +136,7 @@ export default class ChatContent extends Component {
         <div className="content__footer">
           <div className="sendNewMessage">
             <button className="addFiles">
-              <i className="fa fa-plus"></i>
+            <FaPlus className="plus-icon" />
             </button>
             <input
               type="text"
@@ -144,7 +145,7 @@ export default class ChatContent extends Component {
               value={this.state.msg}
             />
             <button className="btnSendMsg" id="sendMsgBtn">
-              <i className="fa fa-paper-plane"></i>
+            <FaPaperPlane className="paper-plane" />
             </button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import "../Form/form.css"
+import "../CompanyInformation/form.css"
 import "./style.css"
 import { RiArrowRightLine } from 'react-icons/ri';
 

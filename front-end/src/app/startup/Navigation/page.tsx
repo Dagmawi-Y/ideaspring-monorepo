@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MyPitchs from "../../myPitch/page"
 import MyInvestor from "../../MyInvestor/page"
 import InvestorSearch from "../../RegsteredUser/page"
+import Chat from "../../chat/page"
 export default function Home() {
   const [activeTab, setActiveTab] = useState('My Pitches');
 
@@ -40,6 +41,9 @@ export default function Home() {
           )}
           {activeTab === 'Investor Search' && (
             <InvestorSearch/>
+          )}
+          {activeTab === 'Messages' && (
+            <Chat/>
           )}
 
         </div>

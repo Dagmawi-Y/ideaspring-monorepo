@@ -35,8 +35,8 @@ const IndustrySelector = () => {
 
   return (
     <div className="industry-selector">
-      <h1 className='h1'>Select up to 3 industries you're interested in:</h1>
-      <h2 className='h2'>You can always change your chosen industries later if you change your mind</h2>
+      <h1 className='h1' style={{fontSize:"35px"}}>Select up to 3 industries you're interested in:</h1>
+      <h2 className='h2' style={{fontSize:"25px"}}>You can always change your chosen industries later if you change your mind</h2>
       <div className="industries">
         {industries.map((industry) => (
           <div key={industry} className="industry-option">

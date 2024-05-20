@@ -158,7 +158,7 @@ const Login = () => {
                 <label htmlFor="formCheck">Remember Me</label>
               </div>
               <div className="input-field">
-              <Link href='/pitch'>
+              <Link href='startup/pitch'>
                 <input
                   type="submit"
                   className="input-submit"
