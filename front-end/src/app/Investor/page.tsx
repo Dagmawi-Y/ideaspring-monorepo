@@ -119,7 +119,7 @@ const Home = () => {
                     className="icon-button"
                     onClick={() => {
                     // Redirect to the pitch page URL
-                    window.location.href = "/Registration";
+                    window.location.href = "/InvestorFirstPage";
                     }}
                     >
                     {currentStep === formComponents[selectedForm].length - 1 ? 'Submit' : 'Next'}
