@@ -3,12 +3,12 @@ import React, { useState, useRouter } from 'react';
 import FormOneStepOne from './formone/page';
 import FormOneStepTwo from './RangeSlider/page';
 import FormOneStepThree from "./formthree/page"
-import FormOneStepFour from "./Industries/page"
+import FormOneStepFour from "./Forms/view/Industries/page"
 import FormOneStepFive from "./last/page"
 import FormTwoStepOne from './formtwo/formtwo';
 import FormTwoStepTwo from './RangeSlider/page';
 import FormTwoStepThree from "./formthree/page"
-import FormTwoStepFour from "./Industries/page"
+import FormTwoStepFour from "./Forms/view/Industries/page"
 import FormTwoStepFive from "./last/page"
 import './style.css'; // Import styles (optional)
 

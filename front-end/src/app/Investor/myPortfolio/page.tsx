@@ -2,10 +2,10 @@
 import { useState} from 'react';
 import Image from 'next/image';
 import "./style.css"
-import "../MyInvestor/style.css";
-import InterestedComponent from "../chat/add/page";
-import ShortlistComponent from "../chat/page";
-import NudgedComponent from "../chat/add/page";
+import "../startup/MyInvestor/style.css";
+import InterestedComponent from "../../chat/add/page";
+import ShortlistComponent from "../../chat/page";
+import NudgedComponent from "../../chat/add/page";
 export default function Home() {
     const [activeItem, setActiveItem] = useState(0);
 

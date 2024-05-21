@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./style.css";
-import ComponentOneForm from "../formone/page";
-import ComponentTwoForm from "../formtwo/formtwo";
+import ComponentOneForm from "../Forms/view/formone/pagee
+import ComponentTwoForm from "../Forms/view/formtwo/formtwoo
 
 const RadioButton = () => {
   const [selectedOption, setSelectedOption] = useState(null);

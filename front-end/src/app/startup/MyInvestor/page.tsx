@@ -1,11 +1,11 @@
 "use client"
 import React, { useState } from "react";
 import "./style.css";
-import NavBar from "../startup/NavBar/page";
-import Add from "../chat/add/page";
-import InterestedComponent from "../chat/add/page";
-import ShortlistComponent from "../chat/page";
-import NudgedComponent from "../chat/add/page";
+import NavBar from "../NavBar/page";
+import Add from "../../chat/add/page";
+import InterestedComponent from "../../chat/add/page";
+import ShortlistComponent from "../../chat/page";
+import NudgedComponent from "../../chat/add/page";
 
 const MyInvestor = () => {
   const [activeItem, setActiveItem] = useState(0);

@@ -2,9 +2,9 @@
 import Head from 'next/head';
 import './style.css';
 import { useState } from 'react';
-import MyPitchs from "../../myPitch/page"
-import MyInvestor from "../../MyInvestor/page"
-import InvestorSearch from "../../RegsteredUser/page"
+import MyPitchs from "../myPitch/page"
+import MyInvestor from "../MyInvestor/page"
+import InvestorSearch from "../../Investor/Forms/page"
 import Chat from "../../chat/page"
 export default function Home() {
   const [activeTab, setActiveTab] = useState('My Pitches');
