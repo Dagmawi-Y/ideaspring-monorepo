@@ -242,6 +242,9 @@ export class AuthService {
       const role = user.userRole?.role;
 
       // Return the user
+      console.log({
+        msg: 'User signed in',
+      });
       return this.signToken(user.id, user.email, role?.name ?? '');
     } catch (error) {
       throw error;

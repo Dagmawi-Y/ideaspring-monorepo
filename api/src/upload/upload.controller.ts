@@ -15,15 +15,31 @@ import { diskStorage } from 'multer';
 import { UploadService } from './upload.service';
 import { JwtGuard } from 'src/auth/guard';
 import { Roles } from 'src/auth/decorator/roles.decorator';
+import {
+  ApiBearerAuth,
+  ApiConsumes,
+  ApiParam,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
+@ApiTags('Uploads')
 @Controller('uploads')
 export class UploadController {
   constructor(private readonly uploadService: UploadService) {}
 
   // Upload Startup Video
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('entrepreneur')
   @Post('video/:startupId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'startupId',
+    type: 'integer',
+    description: 'ID of the startup',
+  })
   @UseInterceptors(
     FileInterceptor('video', {
       storage: diskStorage({
@@ -56,9 +72,17 @@ export class UploadController {
   }
 
   // Upload Startup Image
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('entrepreneur')
   @Post('image/:startupId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'startupId',
+    type: 'integer',
+    description: 'ID of the startup',
+  })
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -91,9 +115,17 @@ export class UploadController {
   }
 
   // Upload User Profile Image
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('user')
   @Post('user/profile-image/:userId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'userId',
+    type: 'integer',
+    description: 'ID of the user',
+  })
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -126,9 +158,17 @@ export class UploadController {
   }
 
   // Upload User Banner Image
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('user')
   @Post('user/banner-image/:userId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'userId',
+    type: 'integer',
+    description: 'ID of the user',
+  })
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -161,9 +201,17 @@ export class UploadController {
   }
 
   // Upload Investor Profile Image
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   // @Roles('investor')
   @Post('investor/profile-image/:investorId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'investorId',
+    type: 'integer',
+    description: 'ID of the investor',
+  })
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -196,9 +244,17 @@ export class UploadController {
   }
 
   // Upload Investor Banner Image
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   // @Roles('investor')
   @Post('investor/banner-image/:investorId')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'investorId',
+    type: 'integer',
+    description: 'ID of the investor',
+  })
   @UseInterceptors(
     FileInterceptor('image', {
       storage: diskStorage({
@@ -231,9 +287,22 @@ export class UploadController {
   }
 
   // Upload Startup Document
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('entrepreneur')
   @Post('document/:startupId/:documentType')
+  @ApiConsumes('multipart/form-data')
+  @ApiParam({
+    name: 'startupId',
+    type: 'integer',
+    description: 'ID of the startup',
+  })
+  @ApiParam({
+    name: 'documentType',
+    type: 'string',
+    description: 'Type of the document',
+  })
   @UseInterceptors(
     FileInterceptor('document', {
       storage: diskStorage({
@@ -265,9 +334,16 @@ export class UploadController {
     }
   }
 
+  @ApiBearerAuth()
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @UseGuards(JwtGuard)
   @Roles('entrepreneur')
   @Get('document/:documentId')
+  @ApiParam({
+    name: 'documentId',
+    type: 'integer',
+    description: 'ID of the document',
+  })
   async downloadStartupDocs(
     @Param('documentId') documentId: string,
     @Res() res: any,

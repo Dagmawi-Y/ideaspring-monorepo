@@ -42,6 +42,19 @@ export class StartupService {
       throw new Error('userId is undefined');
     }
 
+    // Check if a startup with the same name already exists
+    const existingStartup = await this.prisma.startup.findFirst({
+      where: { pitch_title: pitchTitle },
+    });
+
+    if (existingStartup) {
+      return {
+        msg: 'A startup with the same name already exists',
+        status: 'startup_exist_error',
+      };
+    }
+
+    // Create the new startup
     const startup = await this.prisma.startup.create({
       data: {
         user: { connect: { id: userId } }, // Connect the startup with the user using the userId
@@ -70,6 +83,7 @@ export class StartupService {
 
     return {
       msg: 'Startup created successfully',
+      status: 'success',
       startup_id: startup.id,
       startup_name: startup.pitch_title,
     };

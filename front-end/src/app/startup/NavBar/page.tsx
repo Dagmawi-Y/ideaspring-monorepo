@@ -1,6 +1,14 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
-import { FaCircle, FaAngleDown, FaUser, FaEnvelope, FaChartLine, FaQuestionCircle, FaArrowRight } from 'react-icons/fa';
+import {
+  FaCircle,
+  FaAngleDown,
+  FaUser,
+  FaEnvelope,
+  FaChartLine,
+  FaQuestionCircle,
+  FaArrowRight,
+} from 'react-icons/fa';
 import './style.css';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +20,7 @@ export default function NavBar() {
   return (
     <div>
       <nav className="navbar">
-        <img src="/cogrow.png" className="navbar-logo" alt="logo" />
+        <img src="/ISlogo.png" className="navbar-logo" alt="logo" />
         <ul className="navbar-list">
           <li>
             <a href="#">Home</a>
@@ -34,10 +42,10 @@ export default function NavBar() {
         <div className="profile-dropdown">
           <div onClick={toggleDropdown} className="profile-dropdown-btn">
             <div className="profile-imgg">
-              <FaCircle style={{color:"#54f985"}} />
+              <FaCircle style={{ color: '#54f985' }} />
             </div>
             <p>
-              Victoria <FaAngleDown/>
+              Victoria <FaAngleDown />
             </p>
           </div>
 
@@ -45,28 +53,41 @@ export default function NavBar() {
             <ul className={`profile-dropdown-list ${isOpen ? 'active' : ''}`}>
               <li className="profile-dropdown-list-item">
                 <a href="#">
-                  <FaUser style={{color:"#f9ac54",marginRight:"10px"}}/> Edit Profile
+                  <FaUser style={{ color: '#f9ac54', marginRight: '10px' }} />{' '}
+                  Edit Profile
                 </a>
               </li>
               <li className="profile-dropdown-list-item">
                 <a href="#">
-                  <FaEnvelope style={{color:"#f9ac54", marginRight:"10px"}}/> Inbox
+                  <FaEnvelope
+                    style={{ color: '#f9ac54', marginRight: '10px' }}
+                  />{' '}
+                  Inbox
                 </a>
               </li>
               <li className="profile-dropdown-list-item">
                 <a href="#">
-                  <FaChartLine style={{color:"#f9ac54", marginRight:"10px"}}/> Analytics
+                  <FaChartLine
+                    style={{ color: '#f9ac54', marginRight: '10px' }}
+                  />{' '}
+                  Analytics
                 </a>
               </li>
               <li className="profile-dropdown-list-item">
                 <a href="#">
-                  <FaQuestionCircle style={{color:"#f9ac54", marginRight:"10px"}}/> Help & Support
+                  <FaQuestionCircle
+                    style={{ color: '#f9ac54', marginRight: '10px' }}
+                  />{' '}
+                  Help & Support
                 </a>
               </li>
               <hr />
               <li className="profile-dropdown-list-item">
                 <a href="#">
-                  <FaArrowRight style={{color:"#f9ac54",marginRight:"10px"}}/> Log out
+                  <FaArrowRight
+                    style={{ color: '#f9ac54', marginRight: '10px' }}
+                  />{' '}
+                  Log out
                 </a>
               </li>
             </ul>

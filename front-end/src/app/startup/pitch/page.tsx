@@ -1,17 +1,40 @@
-"use client"
-import React, { useState } from 'react';
-import "./styl.css";
-import { FaBars, FaTimes, FaQrcode, FaLink, FaStream, FaCalendar, FaQuestionCircle, FaSlidersH, FaEnvelope } from 'react-icons/fa';
-import Form from "./Form/page"; 
-import Pitch from "./CompanyInfo/page"
-import NavBar from "../NavBar/page"
-import Team from "./Team/page"
-import Picture from "./image/page"
-import Document from "./document/page"
+'use client';
+import React, { useEffect, useState } from 'react';
+import './styl.css';
+import {
+  FaBars,
+  FaTimes,
+  FaQrcode,
+  FaLink,
+  FaStream,
+  FaCalendar,
+  FaQuestionCircle,
+  FaSlidersH,
+  FaEnvelope,
+} from 'react-icons/fa';
+import Form from './Form/page';
+import Pitch from './CompanyInfo/page';
+import NavBar from '../NavBar/page';
+import Team from './Team/page';
+import Picture from './image/page';
+import Document from './document/page';
+import { useRouter } from 'next/navigation';
+import cookie from 'js-cookie';
 
+export const setActiveLink = (link) => {
+  setActiveLink(link);
+};
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
-  const [activeLink, setActiveLink] = useState('Form'); 
+  const [activeLink, setActiveLink] = useState('Form');
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = cookie.get('token');
+    if (!token) {
+      window.location.href = '/';
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
@@ -23,7 +46,7 @@ const Sidebar = () => {
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <input type="checkbox" id="check" />
       {/* <label htmlFor="check">
         {expanded ? (
@@ -79,14 +102,12 @@ const Sidebar = () => {
           {/* <span className='Stitle'>About</span> */}
           &nbsp; Document
         </a>
-        
       </div>
-      {activeLink === 'Form' && <Form />}
-      {activeLink === 'Pitch' && <Pitch />}
-      {activeLink === 'Team' && <Team />}
-      {activeLink === 'images' && <Picture />}
-      {activeLink === 'document' && <Document />}
-      
+      {activeLink === 'Form' && <Form setActiveLink={setActiveLink} />}
+      {activeLink === 'Pitch' && <Pitch setActiveLink={setActiveLink} />}
+      {activeLink === 'Team' && <Team setActiveLink={setActiveLink} />}
+      {activeLink === 'images' && <Picture setActiveLink={setActiveLink} />}
+      {activeLink === 'document' && <Document setActiveLink={setActiveLink} />}
     </>
   );
 };

@@ -14,8 +14,8 @@
 } */
 .sidebar {
   position: fixed;
-  width: 190px; 
-  left: 0; 
+  width: 190px;
+  left: 0;
   height: 100%;
   background: #1e1e1e;
   transition: all 0.5s ease;
@@ -161,6 +161,8 @@ label#btn {
   }
 }
 .expanded ~ .dashboard.slide-back {
-  transform: translateX(-190px); /* Adjust the value based on the sidebar width */
+  transform: translateX(
+    -190px
+  ); /* Adjust the value based on the sidebar width */
   transition: transform 0.5s ease;
 }

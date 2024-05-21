@@ -1,12 +1,24 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 import './form.css';
 import Select from 'react-select';
 import FormInput from './forms';
 import { RiArrowRightLine } from 'react-icons/ri';
+import apiClient from '@/utils/apiClient';
+import { setActiveLink } from '../page';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for React Toastify
+import Cookies from 'js-cookie';
 
-const App = () => {
+const App = ({ setActiveLink }) => {
   const [values, setValues] = useState({
+    pitchTitle: '',
+    website: '',
+    mobileNumber: '',
+    previousRoundAmount: '',
+    totalRaisingAmount: '',
+    raisedAmount: '',
+    taxRelief: '',
     username: '',
     email: '',
     birthday: '',
@@ -24,22 +36,81 @@ const App = () => {
   });
 
   const handleChange = (name, value) => {
-    if (name === 'Location' || name === 'Industry 1' || name === 'Industry 2' || name === 'Stage' || name === 'Ideal Investor Role' || name === 'PreviousRaise' || name === 'TotalRaise' || name === 'Total-Raise' || name === 'Minimum investment') {
-      setValues({ ...values, [name]: value });
-    } else {
-      setValues({ ...values, [name]: value.target.value });
-    }
+    console.log(`Changing ${name} to ${value}`); // Log the name and value of the change
+    setValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform form submission logic here
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    console.log({
+      values,
+    });
+
+    const formData = {
+      pitchTitle: values.pitchTitle || '',
+      website: values.website || '',
+      location: values.location || '',
+      mobileNumber: values.mobileNumber ? values.mobileNumber : null,
+      industry1:
+        industryOptions.find(
+          (option) => option.value === parseInt(values.industry1)
+        )?.value ?? null,
+      industry2:
+        industryOptions.find(
+          (option) => option.value === parseInt(values.industry2)
+        )?.value ?? null,
+      stage:
+        stageOptions.find((option) => option.value === parseInt(values.stage))
+          ?.value ?? null,
+      idealInvestorRole:
+        idealInvestorRoleOptions.find(
+          (option) => option.value === parseInt(values.idealInvestorRole)
+        )?.value ?? null,
+      previousRoundAmount: +values.previousRoundAmount,
+      totalRaisingAmount: +values.totalRaisingAmount,
+      raisedAmount: +values.raisedAmount,
+      minimumInvestment: +values.minimumInvestment,
+      taxRelief:
+        taxReliefOptions.find((option) => option.label === values.taxRelief)
+          ?.value ?? null,
+    };
+
+    console.log('FormData:', formData);
+
+    try {
+      const response = await apiClient.post('startups/add', formData);
+
+      Cookies.set('startup_id', response.data.startup_id);
+      console.log({
+        cookie: Cookies.get('startup_id'),
+      });
+
+      if (response.data.status === 'startup_exist_error') {
+        toast.error(response.data.msg, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false, // Show progress bar
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          className: 'custom-toast',
+        });
+      } else {
+        // Handle successful response
+        console.log(response.data);
+        setActiveLink('Pitch');
+      }
+    } catch (error) {
+      // Handle the error
+      console.error('Error:', error);
+    }
   };
 
   const inputs = [
     {
       id: 1,
-      name: 'Pitch Title',
+      name: 'pitchTitle',
       type: 'text',
       placeholder: 'Pitch Title',
       errorMessage:
@@ -50,7 +121,7 @@ const App = () => {
     },
     {
       id: 2,
-      name: 'Website (Optional)',
+      name: 'website',
       type: 'text',
       placeholder: 'Website',
       errorMessage: 'It should be a valid website address!',
@@ -59,93 +130,86 @@ const App = () => {
     },
     {
       id: 3,
-      name: 'Location',
+      name: 'location',
       type: 'select',
       placeholder: 'Location',
       label: 'Where is your company based?',
     },
     {
       id: 4,
-      name: 'Mobile number',
+      name: 'mobileNumber',
       type: 'text',
       placeholder: 'Mobile number',
-      errorMessage:
-        'This is a required filed',
+      errorMessage: 'This is a required filed',
       label: 'Mobile number',
 
       required: true,
     },
     {
       id: 5,
-      name: 'Industry 1',
+      name: 'industry1',
       type: 'select',
       placeholder: 'Industry 1',
-      errorMessage:
-        'This is a required filed',
+      errorMessage: 'This is a required filed',
       label: 'Industry 1',
       required: true,
     },
     {
       id: 6,
-      name: 'Industry 2',
+      name: 'industry2',
       type: 'select',
       placeholder: 'Industry 2',
       label: 'Industry 2 (optional)',
     },
     {
       id: 7,
-      name: 'Stage',
+      name: 'stage',
       type: 'select',
       placeholder: 'Stage',
-      errorMessage:
-        'This is a required filed',
+      errorMessage: 'This is a required filed',
       label: 'Stage',
       required: true,
     },
     {
       id: 8,
-      name: 'Ideal Investor Role',
+      name: 'idealInvestorRole',
       type: 'select',
       placeholder: 'Ideal Investor Role',
-      errorMessage:
-      'This is a required filed',
+      errorMessage: 'This is a required filed',
       label: 'Ideal Investor Role',
       required: true,
     },
     {
       id: 9,
-      name: 'PreviousRaise',
+      name: 'previousRoundAmount',
       type: 'select',
       placeholder: 'PreviousRaise',
       label: 'If you did a previous round, how much did you raise?',
     },
     {
       id: 10,
-      name: 'TotalRaise',
+      name: 'totalRaisingAmount',
       type: 'select',
       placeholder: 'TotalRaise',
-      errorMessage:
-        'This is a required filed',
+      errorMessage: 'This is a required filed',
       label: 'How much are you raising in total?',
       required: true,
     },
     {
       id: 11,
-      name: 'Total-Raise',
+      name: 'raisedAmount',
       type: 'select',
       placeholder: 'Total-Raise',
-      errorMessage:
-      'This is a required filed',
-       label: 'How much of this total have your raised?',
+      errorMessage: 'This is a required filed',
+      label: 'How much of this total have your raised?',
       required: true,
     },
     {
       id: 12,
-      name: 'Minimum investment',
+      name: 'minimumInvestment',
       type: 'select',
       placeholder: 'Minimum investment',
-      errorMessage:
-      'This is a required filed',      
+      errorMessage: 'This is a required filed',
       label: 'What is the minimum investment per investor?',
       required: true,
     },
@@ -172,48 +236,72 @@ const App = () => {
     { value: 'harar', label: 'Harar' },
     { value: 'nazareth', label: 'Nazareth' },
     { value: 'awasa', label: 'Awasa' },
-    { value: 'bale_mountains', label: 'Bale Mountains' },
   ];
 
-  const industryOptions = [
-    { value: 'agriculture', label: 'Agriculture' },
-    { value: 'manufacturing', label: 'Manufacturing' },
-    { value: 'information_technology', label: 'Information Technology' },
-    { value: 'tourism', label: 'Tourism' },
-    { value: 'construction', label: 'Construction' },
-    { value: 'healthcare', label: 'Healthcare' },
-    { value: 'education', label: 'Education' },
-    { value: 'energy', label: 'Energy' },
-    { value: 'finance', label: 'Finance' },
-    { value: 'telecommunications', label: 'Telecommunications' },
-    { value: 'retail', label: 'Retail' },
-    { value: 'transportation', label: 'Transportation' },
-    { value: 'real_estate', label: 'Real Estate' },
-    { value: 'media_and_entertainment', label: 'Media and Entertainment' },
-    { value: 'food_and_beverage', label: 'Food and Beverage' },
-    { value: 'automotive', label: 'Automotive' },
-    { value: 'textile_and_apparel', label: 'Textile and Apparel' },
-    { value: 'environmental_services', label: 'Environmental Services' },
-    { value: 'pharmaceuticals', label: 'Pharmaceuticals' },
-    { value: 'mining', label: 'Mining' },
+  const industries = [
+    { id: 1, name: 'Agriculture' },
+    { id: 2, name: 'Business Services' },
+    { id: 3, name: 'Education & Training' },
+    { id: 4, name: 'Energy & Natural Resources' },
+    { id: 5, name: 'Entertainment & Leisure' },
+    { id: 6, name: 'Fashion & Beauty' },
+    { id: 7, name: 'Finance' },
+    { id: 8, name: 'Food & Beverage' },
+    { id: 9, name: 'Hospitality, Restaurants & Bars' },
+    { id: 10, name: 'Manufacturing & Engineering' },
+    { id: 11, name: 'Media' },
+    { id: 12, name: 'Medical & Sciences' },
+    { id: 13, name: 'Personal Services' },
+    { id: 14, name: 'Products & Inventions' },
+    { id: 15, name: 'Property' },
+    { id: 16, name: 'Retail' },
+    { id: 17, name: 'Sales & Marketing' },
+    { id: 18, name: 'Software' },
+    { id: 19, name: 'Technology' },
+    { id: 20, name: 'Transportation' },
   ];
 
-  const stageOptions = [
-    { value: 'Pre-Startup', label: 'Pre-Startup' },
-    { value: 'Profitable', label: 'Profitable' },
-    { value: 'MVP', label: 'MVP' },
-    { value: 'Achieving-sales', label: 'Achieving-sales' },
-    { value: 'Brekingeven', label: 'Breaking Even' },
-    { value: 'other', label: 'Other' },
+  const stages = [
+    { id: 1, stageName: 'Achieving Sales' },
+    { id: 2, stageName: 'Breaking Even' },
+    { id: 3, stageName: 'MVP/Finished Product' },
+    { id: 4, stageName: 'Other' },
+    { id: 5, stageName: 'Pre-Startup/R&D' },
+    { id: 6, stageName: 'Profitable' },
   ];
 
-  const idealInvestorRoleOptions = [
-    { value: 'silent', label: 'Silent' },
-    { value: 'Daily-Involvement', label: 'Daily Involvement' },
-    { value: 'Weekly-Involvement', label: 'Weekly Involvement' },
-    { value: 'Monthly-Involvement', label: 'Monthly Involvement' },
-    { value: 'any', label: 'Any' },
+  const investorRoles = [
+    { id: 1, roleName: 'Silent' },
+    { id: 2, roleName: 'Daily Involvement' },
+    { id: 3, roleName: 'Weekly Involvement' },
+    { id: 4, roleName: 'Monthly Involvement' },
+    { id: 5, roleName: 'Any' },
   ];
+
+  const taxReliefs = [
+    { id: 1, reliefName: 'SEIS' },
+    { id: 2, reliefName: 'EIS' },
+  ];
+
+  const industryOptions = industries.map((industry) => ({
+    value: industry.id,
+    label: industry.name,
+  }));
+
+  const stageOptions = stages.map((stage) => ({
+    value: stage.id,
+    label: stage.stageName,
+  }));
+
+  const idealInvestorRoleOptions = investorRoles.map((role) => ({
+    value: role.id,
+    label: role.roleName,
+  }));
+
+  const taxReliefOptions = taxReliefs.map((relief) => ({
+    value: relief.id,
+    label: relief.reliefName,
+  }));
 
   const previousRaiseOptions = [
     { value: 0, label: '0' },
@@ -252,16 +340,6 @@ const App = () => {
     { value: 300_000_000, label: '300,000,000' },
     { value: 400_000_000, label: '400,000,000' },
     { value: 500_000_000, label: '500,000,000' },
-    { value: 1_000_000_000, label: '1,000,000,000' },
-    { value: 2_000_000_000, label: '2,000,000,000' },
-    { value: 3_000_000_000, label: '3,000,000,000' },
-    { value: 4_000_000_000, label: '4,000,000,000' },
-    { value: 5_000_000_000, label: '5,000,000,000' },
-    { value: 10_000_000_000, label: '10,000,000,000' },
-    { value: 50_000_000_000, label: '50,000,000,000' },
-    { value: 100_000_000_000, label: '100,000,000,000' },
-    { value: 500_000_000_000, label: '500,000,000,000' },
-    { value: 1_000_000_000_000, label: '1,000,000,000,000' }
   ];
 
   const totalRaiseOptions = [
@@ -301,16 +379,6 @@ const App = () => {
     { value: 300_000_000, label: '300,000,000' },
     { value: 400_000_000, label: '400,000,000' },
     { value: 500_000_000, label: '500,000,000' },
-    { value: 1_000_000_000, label: '1,000,000,000' },
-    { value: 2_000_000_000, label: '2,000,000,000' },
-    { value: 3_000_000_000, label: '3,000,000,000' },
-    { value: 4_000_000_000, label: '4,000,000,000' },
-    { value: 5_000_000_000, label: '5,000,000,000' },
-    { value: 10_000_000_000, label: '10,000,000,000' },
-    { value: 50_000_000_000, label: '50,000,000,000' },
-    { value: 100_000_000_000, label: '100,000,000,000' },
-    { value: 500_000_000_000, label: '500,000,000,000' },
-    { value: 1_000_000_000_000, label: '1,000,000,000,000' }
   ];
 
   const totalRaiseProgressOptions = [
@@ -350,16 +418,6 @@ const App = () => {
     { value: 300_000_000, label: '300,000,000' },
     { value: 400_000_000, label: '400,000,000' },
     { value: 500_000_000, label: '500,000,000' },
-    { value: 1_000_000_000, label: '1,000,000,000' },
-    { value: 2_000_000_000, label: '2,000,000,000' },
-    { value: 3_000_000_000, label: '3,000,000,000' },
-    { value: 4_000_000_000, label: '4,000,000,000' },
-    { value: 5_000_000_000, label: '5,000,000,000' },
-    { value: 10_000_000_000, label: '10,000,000,000' },
-    { value: 50_000_000_000, label: '50,000,000,000' },
-    { value: 100_000_000_000, label: '100,000,000,000' },
-    { value: 500_000_000_000, label: '500,000,000,000' },
-    { value: 1_000_000_000_000, label: '1,000,000,000,000' }
   ];
 
   const minimumInvestmentOptions = [
@@ -399,60 +457,60 @@ const App = () => {
     { value: 300_000_000, label: '300,000,000' },
     { value: 400_000_000, label: '400,000,000' },
     { value: 500_000_000, label: '500,000,000' },
-    { value: 1_000_000_000, label: '1,000,000,000' },
-    { value: 2_000_000_000, label: '2,000,000,000' },
-    { value: 3_000_000_000, label: '3,000,000,000' },
-    { value: 4_000_000_000, label: '4,000,000,000' },
-    { value: 5_000_000_000, label: '5,000,000,000' },
-    { value: 10_000_000_000, label: '10,000,000,000' },
-    { value: 50_000_000_000, label: '50,000,000,000' },
-    { value: 100_000_000_000, label: '100,000,000,000' },
-    { value: 500_000_000_000, label: '500,000,000,000' },
-    { value: 1_000_000_000_000, label: '1,000,000,000,000' }
   ];
   const options = {
-    Location: LocationOptions,
-    'Industry 1': industryOptions,
-    'Industry 2': industryOptions,
-    Stage: stageOptions,
-    'Ideal Investor Role': idealInvestorRoleOptions,
-    PreviousRaise: previousRaiseOptions,
-    TotalRaise: totalRaiseOptions,
-    'Total-Raise': totalRaiseProgressOptions,
-    'Minimum investment': minimumInvestmentOptions,
+    location: LocationOptions,
+    industry1: industryOptions,
+    industry2: industryOptions,
+    stage: stageOptions,
+    idealInvestorRole: idealInvestorRoleOptions,
+    previousRoundAmount: previousRaiseOptions,
+    totalRaisingAmount: totalRaiseOptions,
+    raisedAmount: totalRaiseProgressOptions,
+    minimumInvestment: minimumInvestmentOptions,
   };
   return (
     <div className="app">
       <form onSubmit={handleSubmit}>
         <h1>Company Info</h1>
-        <h2 className='h2'>a</h2>
+        <h2 className="h2">a</h2>
         <h3>25% complete</h3>
         <div className="col">
           <div className="formpage">
             {inputs.map((input) =>
               input.type === 'select' ? (
                 <div className="form-group" key={input.id}>
-                  <br/>
+                  <br />
                   <label htmlFor={input.name}>{input.label}</label>
-                  <br/><br/>
+                  <br />
+                  <br />
                   <Select
-                  id={input.name}
-                  name={input.name}
-                  value={values[input.name] ? options[input.name].find(option => option.value === values[input.name]) : ''}
-                  options={options[input.name]}
-                  onChange={(selectedOption) => handleChange(input.name, selectedOption.value)}
+                    id={input.name}
+                    name={input.name}
+                    value={
+                      options[input.name].find(
+                        (option) => option.value === values[input.name]
+                      ) || null
+                    }
+                    options={options[input.name]}
+                    onChange={(selectedOption) =>
+                      handleChange(
+                        input.name,
+                        selectedOption ? selectedOption.value : null
+                      )
+                    }
                   />
                 </div>
-                ) : (
+              ) : (
                 <FormInput
                   key={input.id}
                   {...input}
                   value={values[input.name]}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(input.name, e.target.value)}
                 />
-                
               )
             )}
+
             <button type="submit">Submit</button>
           </div>
           <div className="image">
@@ -462,13 +520,19 @@ const App = () => {
               </span>
               <img src="/office.jpeg" alt="logo" />
               <p>
-          Offers a dedicated section or feature on the website to showcase selected Entrepreneurs to a broader audience, including potential investors, industry experts, and the Entrepreneurs community at large.
-          </p>
-          <a href="#" style={{color:"#f88630"}}>Join Now <RiArrowRightLine /></a>
+                Offers a dedicated section or feature on the website to showcase
+                selected Entrepreneurs to a broader audience, including
+                potential investors, industry experts, and the Entrepreneurs
+                community at large.
+              </p>
+              <a href="#" style={{ color: '#f88630' }}>
+                Join Now <RiArrowRightLine />
+              </a>
             </div>
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

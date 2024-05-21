@@ -1,8 +1,8 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 import './form.css';
 import FormInput from './forms';
-import T from "../../t/page"
+// import T from "../../t/page"
 import { RiArrowRightLine } from 'react-icons/ri';
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
   position: '',
   bio: '',
 };
-const App = () => {
+const App = ({ setActiveLink }) => {
   const [values, setValues] = useState({
     username: '',
     email: '',
@@ -49,15 +49,14 @@ const App = () => {
       label: 'Short Summary',
       pattern: '^[A-Za-z0-9]{3,16}$',
       required: true,
-    }
+    },
   ];
-  
 
   return (
     <div className="app">
       <form onSubmit={handleSubmit}>
         <h1>Team</h1>
-        <h2 className='h22'>a</h2>
+        <h2 className="h22">a</h2>
         <h3>55% complete</h3>
         <div className="col">
           <div className="formpage">
@@ -70,7 +69,9 @@ const App = () => {
                       id={input.name}
                       name={input.name}
                       checked={values[input.name]}
-                      onChange={(e) => handleChange(input.name, e.target.checked)}
+                      onChange={(e) =>
+                        handleChange(input.name, e.target.checked)
+                      }
                     />
                     <label htmlFor={input.name}>{input.label}</label>
                   </div>
@@ -92,8 +93,8 @@ const App = () => {
                 );
               }
             })}
-            <br/>
-            <T/>
+            <br />
+            {/* <T /> */}
             <button type="submit">Save and Continue</button>
           </div>
           <div className="image">
@@ -104,11 +105,13 @@ const App = () => {
               <img src="/team.avif" alt="logo" />
               <p>
                 Offers a dedicated section or feature on the website to showcase
-                selected Entrepreneurs to a broader audience, including potential
-                investors, industry experts, and the Entrepreneurs community at large.
+                selected Entrepreneurs to a broader audience, including
+                potential investors, industry experts, and the Entrepreneurs
+                community at large.
               </p>
-              <a href="#" style={{color:"#f88630"}}>Join Now <RiArrowRightLine /></a>
-              
+              <a href="#" style={{ color: '#f88630' }}>
+                Join Now <RiArrowRightLine />
+              </a>
             </div>
           </div>
         </div>
