@@ -3,12 +3,19 @@ import React, { useState } from 'react';
 import "../CompanyInformation/form.css"
 import "./style.css"
 import { RiArrowRightLine } from 'react-icons/ri';
+import Link from 'next/link';
 
 const App = () => {
     const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = '/startup';
+    
   };
   return (
     <div className="app">
@@ -56,7 +63,7 @@ const App = () => {
             </div>
             </div>
             
-            <button type="submit"><a href='/InvestorFirstPage' style={{color:"white"}}>Submit</a></button>
+            <button type="submit" onClick={handleSubmit}><a href='/InvestorFirstPage' style={{color:"white"}}>Submit</a></button>
           </div>
           <div className="image" >
             <div className="explore__card">

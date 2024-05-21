@@ -4,6 +4,7 @@ import './form.css';
 import Select from 'react-select';
 import FormInput from './forms';
 import { RiArrowRightLine } from 'react-icons/ri';
+import { useRouter } from 'next/router'; // Use useRouter for navigation
 
 const App = () => {
   const [values, setValues] = useState({
@@ -23,17 +24,76 @@ const App = () => {
     minimumInvestment: '',
   });
 
+  // const handleChange = (name, value) => {
+  //   if (name === 'Location' || name === 'Industry 1' || name === 'Industry 2' || name === 'Stage' || name === 'Ideal Investor Role' || name === 'PreviousRaise' || name === 'TotalRaise' || name === 'Total-Raise' || name === 'Minimum investment') {
+  //     setValues({ ...values, [name]: value });
+  //   } else if (value && value.target) { // Check if value has a target property
+  //     setValues({ ...values, [name]: value.target.value });
+  //   }
+  // };
+  const [errors, setErrors] = useState({}); // State to store validation errors
+
+
   const handleChange = (name, value) => {
-    if (name === 'Location' || name === 'Industry 1' || name === 'Industry 2' || name === 'Stage' || name === 'Ideal Investor Role' || name === 'PreviousRaise' || name === 'TotalRaise' || name === 'Total-Raise' || name === 'Minimum investment') {
-      setValues({ ...values, [name]: value });
-    } else {
-      setValues({ ...values, [name]: value.target.value });
+    setValues({ ...values, [name]: value });
+    setErrors({ ...errors, [name]: validateField(name, value) }); // Update errors on change
+  };
+
+  const validateField = (name, value) => {
+    let errorMessage = '';
+    switch (name) {
+      case 'username':
+      case 'email':
+        if (!value) {
+          errorMessage = 'This field is required.';
+        } else if (!/^[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(value)) {
+          errorMessage = 'Invalid email format.';
+        }
+        break;
+      case 'password':
+      case 'confirmPassword':
+        if (!value) {
+          errorMessage = 'This field is required.';
+        } else if (value.length < 6) {
+          errorMessage = 'Password must be at least 6 characters long.';
+        }
+        break;
+      case 'pitchTitle':
+        if (!value) {
+          errorMessage = inputs.find((input) => input.name === name).errorMessage;
+        } else if (!/^[A-Za-z0-9]{3,16}$/.test(value)) {
+          errorMessage = 'Invalid pitch title format (3-16 characters).';
+        }
+        break;
+      case 'website': // Assuming website is optional
+        if (value && !/^https?:\/\/[^\s]+/.test(value)) {
+          errorMessage = 'Invalid website URL format.';
+        }
+        break;
+      case 'mobile number': // Assuming mobile number validation is specific
+        // Add your custom mobile number validation logic here
+        break;
+        default:
+          errorMessage = inputs.find((input) => input.name === name)?.required && !value
+            ? inputs.find((input) => input.name === name).errorMessage
+            : '';
     }
+    return errorMessage;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform form submission logic here
+
+    const allFieldsValid = Object.values(errors).every((error) => !error); // Check for all valid fields
+
+    if (allFieldsValid) {
+      // Perform form submission logic here (e.g., send data to server)
+      console.log('Form submitted successfully:', values);
+
+      // Navigate to the 'Success' component using router.push
+    } else {
+      console.error('Form submission failed due to validation errors:', errors);
+    }
   };
 
   const inputs = [
@@ -43,7 +103,7 @@ const App = () => {
       type: 'text',
       placeholder: 'Pitch Title',
       errorMessage:
-        "Pitch Title should be less than 25 characters and shouldn't include any special characters!",
+        "This is a required field",
       label: 'Pitch Title',
       pattern: '^[A-Za-z0-9]{3,16}$',
       required: true,
@@ -51,11 +111,9 @@ const App = () => {
     {
       id: 2,
       name: 'Website (Optional)',
-      type: 'text',
+      type: 'url',
       placeholder: 'Website',
-      errorMessage: 'It should be a valid website address!',
       label: 'Website (optional)',
-      required: true,
     },
     {
       id: 3,
@@ -70,7 +128,7 @@ const App = () => {
       type: 'text',
       placeholder: 'Mobile number',
       errorMessage:
-        'This is a required filed',
+        'This is a required field',
       label: 'Mobile number',
 
       required: true,
@@ -81,7 +139,7 @@ const App = () => {
       type: 'select',
       placeholder: 'Industry 1',
       errorMessage:
-        'This is a required filed',
+        'This is a required field',
       label: 'Industry 1',
       required: true,
     },
@@ -98,7 +156,7 @@ const App = () => {
       type: 'select',
       placeholder: 'Stage',
       errorMessage:
-        'This is a required filed',
+        'This is a required field',
       label: 'Stage',
       required: true,
     },
@@ -108,7 +166,7 @@ const App = () => {
       type: 'select',
       placeholder: 'Ideal Investor Role',
       errorMessage:
-      'This is a required filed',
+      'This is a required field',
       label: 'Ideal Investor Role',
       required: true,
     },
@@ -125,7 +183,7 @@ const App = () => {
       type: 'select',
       placeholder: 'TotalRaise',
       errorMessage:
-        'This is a required filed',
+        'This is a required field',
       label: 'How much are you raising in total?',
       required: true,
     },
@@ -135,7 +193,7 @@ const App = () => {
       type: 'select',
       placeholder: 'Total-Raise',
       errorMessage:
-      'This is a required filed',
+      'This is a required field',
        label: 'How much of this total have your raised?',
       required: true,
     },
@@ -145,7 +203,7 @@ const App = () => {
       type: 'select',
       placeholder: 'Minimum investment',
       errorMessage:
-      'This is a required filed',      
+      'This is a required field',      
       label: 'What is the minimum investment per investor?',
       required: true,
     },

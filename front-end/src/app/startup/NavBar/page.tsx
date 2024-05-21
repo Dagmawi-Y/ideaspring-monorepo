@@ -10,7 +10,7 @@ export default function NavBar() {
   };
 
   return (
-    <div>
+    <div className='all'>
       <nav className="navbar">
         <img src="/cogrow.png" className="navbar-logo" alt="logo" />
         <ul className="navbar-list">
@@ -34,7 +34,7 @@ export default function NavBar() {
         <div className="profile-dropdown">
           <div onClick={toggleDropdown} className="profile-dropdown-btn">
             <div className="profile-imgg">
-              <FaCircle style={{color:"#54f985"}} />
+              <FaCircle style={{color:"#54f985", width:"10px", height:'10px'}} />
             </div>
             <p>
               Victoria <FaAngleDown/>

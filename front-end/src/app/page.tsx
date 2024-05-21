@@ -77,7 +77,7 @@ export default function Home() {
       </button>
       {showDropdownButtons && (
         <div className="dropdown-container">
-          <a href="/Registration?role=entrepreneur" className="dropdown-button">
+          <a href="/startup/Registration" className="dropdown-button">
             As Entrepreneur
           </a>
           <a href="/Registration?role=investor" className="dropdown-button">
@@ -118,7 +118,7 @@ export default function Home() {
               profiles of startups and angel investors to identify compatible
               matches.
             </p>
-            <a href="/Startup/Sreg">
+            <a href="/startup/Registration">
               Join Now <FaArrowRight />
             </a>
           </div>

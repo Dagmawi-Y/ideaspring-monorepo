@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import "./style.css";
 import NavBar from "../NavBar/page";
-import Add from "../../chat/add/page";
-import InterestedComponent from "../../chat/add/page";
-import ShortlistComponent from "../../chat/page";
-import NudgedComponent from "../../chat/add/page";
+import Add from "../chat/add/page";
+import InterestedComponent from "../Interested/page";
+import ShortlistComponent from "../ShortList/page.tsx";
+// import NudgedComponent from "../../chat/add/page";
 
 const MyInvestor = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -17,11 +17,11 @@ const MyInvestor = () => {
   const renderComponent = () => {
     switch (activeItem) {
       case 0:
-        return <InterestedComponent />;
+        return <InterestedComponent/>;
       case 1:
-        return <ShortlistComponent />;
+        return <ShortlistComponent/>;
       case 2:
-        return <NudgedComponent />;
+        return <p>ggggy</p>;
       default:
         return null;
     }
@@ -33,6 +33,7 @@ const MyInvestor = () => {
         <div
           className={`item ${activeItem === 0 ? "active" : ""}`}
           onClick={() => handleClick(0)}
+          style={{borderRadius: "20px 0 0 20px ",}}
         >
           Interested
         </div>
@@ -45,6 +46,7 @@ const MyInvestor = () => {
         <div
           className={`item ${activeItem === 2 ? "active" : ""}`}
           onClick={() => handleClick(2)}
+          style={{borderRadius: "0 20px 20px 0",}}
         >
           Nudged
         </div>
