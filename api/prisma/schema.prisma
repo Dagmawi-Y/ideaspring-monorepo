@@ -231,6 +231,7 @@ model Alert {
   user_id    Int
   source     String
   message    String
+  read       Boolean? @default(false)
   timestamp  DateTime
   created_at DateTime @default(now())
   user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)

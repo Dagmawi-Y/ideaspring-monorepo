@@ -9,7 +9,6 @@ import { PrismaModule } from './prisma/prisma.module';
 import { EngagerModule } from './engager/engager.module';
 import { StartupModule } from './startup/startup.module';
 import { SearchModule } from './search/search.module';
-import { AlertModule } from './alert/alert.module';
 import { MatchModule } from './match/match.module';
 import { ChatModule } from './chat/chat.module';
 import { ConversationController } from './conversation/conversation.controller';
@@ -30,7 +29,6 @@ import { UploadModule } from './upload/upload.module';
     EngagerModule,
     StartupModule,
     SearchModule,
-    AlertModule,
     MatchModule,
     ChatModule,
     InteractionModule,

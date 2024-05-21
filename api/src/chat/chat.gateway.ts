@@ -11,7 +11,7 @@ import { JwtSocketGuard } from 'src/auth/guard/jwt_socket.guard';
 import { UseGuards } from '@nestjs/common';
 
 @WebSocketGateway({ cors: { origin: '*' } })
-@UseGuards(JwtSocketGuard)
+// @UseGuards(JwtSocketGuard)
 export class ChatGateway {
   @WebSocketServer()
   server: Server;
@@ -28,7 +28,7 @@ export class ChatGateway {
     console.log({
       client,
     });
-    const userId = 1;
+    const userId = 6;
 
     // Join the room
     socket.join(`conversation-${conversationId}`);
