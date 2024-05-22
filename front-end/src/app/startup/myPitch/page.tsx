@@ -21,7 +21,7 @@ const Card = ({ img, title, investmentRange, location, AreaOfExperties, descript
       <div className="card">
         <p className="card-text">Hit the big orange button to add a new pitch.</p>
         <div className="button-container">
-          <button className="add-pitch-button">+</button>
+          <button className="add-pitch-button" ><a href='/startup/pitch' color='#dad4d4'>+</a></button>
         </div>
       </div>
     </div>

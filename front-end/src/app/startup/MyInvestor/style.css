@@ -6,7 +6,7 @@
   }
   
   .item {
-    width: 200px; 
+    width: 150px; 
     height: 30px; 
     border: 1px solid #f9ac54; 
     display: flex;
@@ -23,7 +23,7 @@
   }
   .warnning{
     background-color: #ffe9cf;
-    padding: 25px 0;
+    padding: 10px 0;
     color: #faa23c;
     margin-top: 50px;
     margin-bottom: 50px;

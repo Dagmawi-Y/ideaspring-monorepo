@@ -1,0 +1,38 @@
+/* ExploreProjects.module.css */
+
+.containerf {
+  position: relative;
+  width: 100%;
+  height: 200px;  /* Adjust the height as needed */
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: -22px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2; 
+  filter: grayscale(100%); /* Adjust the blur effect */
+}
+
+.contentf {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  color: #333;  /* Adjust text color */
+}
+
+.contentf h2 {
+  margin-top: 40;
+  font-size: 24px;
+}
+
+.contentf p {
+    margin-top: -10px;
+  font-size: 16px;
+}

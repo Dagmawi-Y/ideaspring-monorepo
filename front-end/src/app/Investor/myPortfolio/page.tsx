@@ -2,10 +2,9 @@
 import { useState} from 'react';
 import Image from 'next/image';
 import "./style.css"
-import "../startup/MyInvestor/style.css";
-import InterestedComponent from "../../chat/add/page";
-import ShortlistComponent from "../../chat/page";
-import NudgedComponent from "../../chat/add/page";
+import "../../startup/MyInvestor/style.css";
+import InterestedComponent from "../Interested/page";
+import ShortlistComponent from "../ShortListed/page";
 export default function Home() {
     const [activeItem, setActiveItem] = useState(0);
 
@@ -20,14 +19,19 @@ export default function Home() {
       case 1:
         return <ShortlistComponent />;
       case 2:
-        return <NudgedComponent />;
+        return (
+          < div  style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <img style={{height:"200px"}} src="https://media1.tenor.com/m/tTaCJqHvuLwAAAAC/pleading-puppy-eyes.gif"/>
+        <p style={{fontSize:"25px", color:"red"}}>Sorry this service is not avaliable for now!</p>
+        </div> 
+        );
       default:
         return null;
     }
   };
   return (
     <>
-    <div className="container">
+    <div className="container7">
       <div className="top-section">
         <div>
         <Image src="/member.jpg" alt="Company Logo" width={100} height={100} style={{borderRadius: "50%", marginRight:"20px"}} />
@@ -53,28 +57,31 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <div className="container1">
+    <div className="container1" style={{marginTop:"10px"}}>
         <div
           className={`item ${activeItem === 0 ? "active" : ""}`}
           onClick={() => handleClick(0)}
+          style={{borderRadius: "20px 0 0 20px",padding:"1px"}}
         >
           Interested
         </div>
         <div
           className={`item ${activeItem === 1 ? "active" : ""}`}
           onClick={() => handleClick(1)}
+          style={{padding:"1px"}}
         >
           Shortlist
         </div>
         <div
           className={`item ${activeItem === 2 ? "active" : ""}`}
           onClick={() => handleClick(2)}
+          style={{borderRadius: "0 20px 20px 0",padding:"1px"}}
         >
           Nudged
         </div>
       </div>
       <div className="warnning">
-        <p className="b">
+        <p className="b" style={{fontSize:"13px"}}>
           Before contacting the investors, make sure you check our tips and
           advice page
         </p>

@@ -6,7 +6,7 @@ body {
   height: 100%;
 }
 #root {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ body {
 .__main {
   max-width: 90%;
   margin: auto;
-  background-color: #fff;
+  background-color: #ffffff;
   min-height: 80vh;
   width: 100%;
   border-radius: 10px;
@@ -25,7 +25,7 @@ body {
 }
 
 .btn {
-  background-color: #fff;
+  background-color: #e0e0e0;
   border: none;
   outline: none;
   cursor: pointer;

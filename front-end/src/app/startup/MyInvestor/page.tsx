@@ -21,7 +21,12 @@ const MyInvestor = () => {
       case 1:
         return <ShortlistComponent/>;
       case 2:
-        return <p>ggggy</p>;
+        return(
+        < div  style={{ display: 'flex',flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <img style={{height:"200px"}} src="https://media1.tenor.com/m/tTaCJqHvuLwAAAAC/pleading-puppy-eyes.gif"/>
+        <p style={{fontSize:"25px", color:"red"}}>Sorry this service is not avaliable for now!</p>
+        </div> 
+        )
       default:
         return null;
     }
@@ -52,7 +57,7 @@ const MyInvestor = () => {
         </div>
       </div>
       <div className="warnning">
-        <p className="b">
+        <p className="b" style={{fontSize:"15px"}}>
           Before contacting the investors, make sure you check our tips and
           advice page
         </p>

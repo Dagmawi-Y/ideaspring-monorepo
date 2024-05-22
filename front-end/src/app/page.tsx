@@ -80,7 +80,7 @@ export default function Home() {
           <a href="/startup/Registration" className="dropdown-button">
             As Entrepreneur
           </a>
-          <a href="/Registration?role=investor" className="dropdown-button">
+          <a href="/Investor/Registration" className="dropdown-button">
             As Investor
           </a>
           <a href="/Registration?role=engager" className="dropdown-button">

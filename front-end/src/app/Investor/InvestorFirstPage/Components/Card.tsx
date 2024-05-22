@@ -2,7 +2,7 @@ import { BsFillBagFill } from "react-icons/bs";
 import React from 'react';
 import Image from 'next/image';
 import { FaTrashAlt,FaStar, FaMapMarkerAlt } from 'react-icons/fa'; // Import the required icons
-import '../products/style2.css';
+import '../Startups/style2.css';
 const Card = ({ img, title, MinperInvestor, location, TotalRequired, description, h1, h2 , h3 }) => {
   return (
     <div className="profile-containerss">

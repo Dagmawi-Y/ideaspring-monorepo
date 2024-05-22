@@ -14,7 +14,7 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({ handleInputChange, query }) => {
   return (
-    <nav>
+    <nav className="navigation">
       <div className="nav-container">
         <input
           className="search-input"

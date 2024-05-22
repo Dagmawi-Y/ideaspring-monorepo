@@ -9,13 +9,18 @@
 
   --shadow: 0px 2px 8px 0px var(--secondary-light);
 }
-
+.all{
+  position: sticky;
+  top:0;
+  z-index: 100;
+}
 .navbar {
   display: flex;
   align-items: center;
   height: 70px;
   background-color: var(--white);
   padding: 0 8%;
+  
   /* box-shadow: var(--shadow); */
 }
 

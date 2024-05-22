@@ -1,6 +1,6 @@
 
   
-  .container {
+  .container7 {
     width: 100%;
     max-width: 600px;
     display: flex;
@@ -55,4 +55,7 @@
 
 .stat-value {
   font-size: 1.5rem;
+}
+.item{
+  width:"10px"
 }

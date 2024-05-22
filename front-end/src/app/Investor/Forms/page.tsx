@@ -37,8 +37,7 @@ const Home = () => {
     if (selectedForm && currentStep < formComponents[selectedForm].length - 1) {
       setCurrentStep(currentStep + 1);
     } else if (currentStep === formComponents[selectedForm].length - 1) {
-      // Navigate to confirmation page on last step
-    }
+      window.location.href = "/Investor";    }
   };
 
   const handleBack = () => {
@@ -117,12 +116,12 @@ const Home = () => {
                </button>
                <button
                     className="icon-button"
-                    onClick={() => {
-                    // Redirect to the pitch page URL
-                    window.location.href = "/InvestorFirstPage";
-                    }}
+                    onClick={handleNext}
                     >
-                    {currentStep === formComponents[selectedForm].length - 1 ? 'Submit' : 'Next'}
+                    {currentStep === formComponents[selectedForm].length - 1 ? 'Submit' : 'Next'
+
+
+                    }
                     </button>
              </div>
            </div>
