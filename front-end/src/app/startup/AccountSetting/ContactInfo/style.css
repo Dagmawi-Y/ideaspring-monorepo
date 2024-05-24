@@ -1,0 +1,98 @@
+/* style1.css */
+.containerf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px; /* Adjust width as needed */
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  
+  .nav-item a:hover {
+    background-color: #eee;
+  }
+  
+  .content {
+    padding: 20px; /* Adjust padding as needed */
+    /* Consider removing border and radius if not needed in the image */
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex; /* Arrange form elements horizontally */
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+  }
+  
+  label {
+    display: block; /* Display labels on separate lines */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="textarea"] 
+   {
+    width: 100%; /* Make text inputs fill the available space */
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    height: 40px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    background-color: #333; /* Adjust button color as needed */
+    color: #fff; /* Adjust button text color as needed */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate clickable behavior */
+    margin-top: 15px; /* Add some spacing above the button */
+  }
+  

@@ -1,4 +1,5 @@
 "use client"
+import Nav from "../NavBar/page"
 import "./style1.css"
 import { useState } from 'react';
 import Contactinfo from "./ContactInfo/page"
@@ -13,9 +14,11 @@ function AccountSettings() {
   }
 
   return (
+    <>
+    <Nav/>
     <div className="container" style={{width:"100%"}}>
       <h1 style={{backgroundColor:"#dee0e099", width:"100%", height:"100%", top:"0", marginTop:"-67px",padding:"53px",textAlign:"center", }}>Account settings</h1>
-      <nav>
+      <nav className="nav" style={{borderColor:"white"}}>
         <div className="nav-item">
           <button onClick={() => handleTabClick('contact-info')} style={{border:"1px solid #ffffff" , padding:'13px', borderRadius: "20px",marginLeft:"-30px",fontSize:"17px",backgroundColor:"#f1f0f0"}}>Contact Info</button>
         </div>
@@ -59,6 +62,7 @@ function AccountSettings() {
         </div>
       )}
     </div>
+    </>
   )
 }
 

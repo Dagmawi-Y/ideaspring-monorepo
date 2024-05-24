@@ -4,7 +4,7 @@ import './style.css';
 import { Range } from 'react-range';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import '../../Investor/Forms/RangeSlider/style.css';
+import '../../Forms/RangeSlider/style.css';
 
  
 

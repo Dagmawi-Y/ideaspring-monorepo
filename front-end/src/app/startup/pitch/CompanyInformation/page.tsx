@@ -482,7 +482,10 @@ const App = () => {
   return (
     <div className="app">
       <form onSubmit={handleSubmit}>
+        <div style={{display:"flex",flexDirection:"row"}}>
         <h1>Company Info</h1>
+        <a href="/startup" className='link' style={{color:"#fe0505",marginLeft: "-40px",}}>Go back to dashboard</a>
+        </div>
         <h2 className='h2'>a</h2>
         <h3>25% complete</h3>
         <div className="col">

@@ -1,4 +1,3 @@
-/* style1.css */
 .container {
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@
     color: #333;
   }
   
-  nav {
+  .nav {
     display: flex;
     flex-wrap: wrap; /* Key change for wrapping items in a row */
     list-style: none; /* Remove default list styling */

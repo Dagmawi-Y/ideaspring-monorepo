@@ -4,9 +4,11 @@ import "./style.css"
 import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaGlobe } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicroscope, faSolarPanel, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+import Nav from "../NavBar/page"
 export default function Profile() {
   return (
     <>
+    <Nav/>
     <div className="container">
       <Head>
         <title>Profile Page</title>
@@ -126,24 +128,18 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="sectione">
+      <div className="">
         <div className="subSectione">
           <h2>Location</h2>
           <div className="tags">
-            <span className="tags">East Anglia</span>
-            <span className="tags">East Midlands</span>
-            <span className="tags">London</span>
-            <span className="tags">N. Ireland</span>
+            <span className="tags">Addis Ababa</span>
           </div>
         </div>
 
         <div className="subSection">
           <h2>Countries</h2>
           <div className="tags">
-            <span className="tags">United Kingdom</span>
-            <span className="tags">Austria</span>
-            <span className="tags">Belgium</span>
-            <span className="tags">Croatia</span>
+            <span className="tags">Ethiopia</span>
           </div>
         </div>
       </div>

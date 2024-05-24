@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { FaTrashAlt,FaStar, FaMapMarkerAlt } from 'react-icons/fa'; // Import the required icons
 import '../Startups/style2.css';
 const Card = ({ img, title, MinperInvestor, location, TotalRequired, description, h1, h2 , h3 }) => {
+  const handleFindOutMore = () => {
+    window.location.href = '/startup/Detail'; // Replace '/startup-details' with the actual path to the desired page
+  };
   return (
     <div className="profile-containerss">
       <div >
@@ -62,7 +65,7 @@ const Card = ({ img, title, MinperInvestor, location, TotalRequired, description
   <p>&bull; {h3}</p>
         </div>
         <div className="profile-buttons">
-          <button style={{height:"35px"}}>
+          <button style={{height:"35px"}} onClick={handleFindOutMore}>
              find out more
           </button>
           <button style={{height:"35px",background:"white", marginLeft:"10px"}}><FaStar style={{color:"#f9ac54", justifyContent:"center", alignItems:"center"}}/></button>

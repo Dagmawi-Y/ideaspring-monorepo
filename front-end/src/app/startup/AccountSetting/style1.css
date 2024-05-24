@@ -1,0 +1,54 @@
+/* style1.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 40px;
+    font-size: 39px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  nav {
+    display: flex;
+    flex-wrap: wrap; /* Key change for wrapping items in a row */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    flex-direction: row;
+  }
+  
+  .nav-item {
+    margin: 5px; /* Margin for spacing between items */
+    padding: 10px 15px; /* Padding for content within each item */
+    border: 1px solid #ddd; /* Individual border for each item */
+    border-radius: 5px;
+    background-color: #fff; /* Background color for each item */
+    transition: background-color 0.2s ease-in-out;
+    list-style: none;
+    border-radius: 20px;
+  }
+  
+  .nav-item button {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    background-color: #ffffff;
+    border: none;
+  }
+  
+  .nav-item a:hover {
+    background-color: #eee;
+  }
+
+  .tab-content{
+    background-color:white ;
+  }

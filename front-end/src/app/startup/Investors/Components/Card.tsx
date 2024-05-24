@@ -4,9 +4,12 @@ import Image from 'next/image';
 import { FaBookmark, FaMapMarkerAlt } from 'react-icons/fa'; // Import the required icons
 import '../startups/style2.css';
 const Card = ({ img, title, investmentRange, location, AreaOfExperties, description }) => {
+  const handleFindOutMore = () => {
+    window.location.href = '/Investor/InvestorDetail'; // Replace '/startup-details' with the actual path to the desired page
+  };
   return (
     <div className="profile-containerss">
-      <FaBookmark style={{justifyContent:"flex-end", alignItems:"end", marginLeft:"315px"}}/>
+      <FaBookmark style={{justifyContent:"flex-end", alignItems:"end", marginLeft:"300px"}}/>
       <div className="profile-header">
         <div className="profile-img">
           <img
@@ -41,7 +44,7 @@ const Card = ({ img, title, investmentRange, location, AreaOfExperties, descript
           <button>
              Nudge
           </button>
-          <button>More details</button>
+          <button onClick={handleFindOutMore}>More details</button>
         </div>
       </div>
     </div>

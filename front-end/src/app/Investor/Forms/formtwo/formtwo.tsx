@@ -73,7 +73,7 @@ function SelfCertificationForm() {
     };
   return (
     <>
-    <h1 className='h1'>High Net Worth Individual Investor Statement</h1>
+    <h1 className='h1' style={{marginTop: "20px",}}>High Net Worth Individual Investor Statement</h1>
     <h2 className='h2'>For the purposes of the Financial Services and Markets Act (Financial Promotion) Order 2005...</h2>
     <div className="container">
     <form>

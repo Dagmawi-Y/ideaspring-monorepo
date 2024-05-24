@@ -12,7 +12,8 @@
 .alls{
   position: sticky;
   top:0;
-  z-index: 100;
+  z-index: 900;
+  width: 100%;
 }
 .navbar {
   display: flex;

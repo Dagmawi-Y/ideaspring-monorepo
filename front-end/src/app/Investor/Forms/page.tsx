@@ -10,7 +10,8 @@ import FormTwoStepTwo from './RangeSlider/page';
 import FormTwoStepThree from "./formthree/page"
 import FormTwoStepFour from "./Industries/page"
 import FormTwoStepFive from "./last/page"
-import './style.css'; // Import styles (optional)
+import './style.css'; 
+import Navbar from "./NavBar/page"
 
 const Home = () => {
   const [selectedForm, setSelectedForm] = useState(null);
@@ -55,6 +56,7 @@ const Home = () => {
 
   return (
     <div>
+      <Navbar/>
       {currentStep === -1 ? (
         <div>
           <div className="h1">What type of investor are you?</div>

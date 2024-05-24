@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import { FaCircle, FaAngleDown, FaUser, FaEnvelope, FaChartLine, FaQuestionCircle, FaArrowRight } from 'react-icons/fa';
-import './style.css';
+import { FaCircle, FaAngleDown, FaUser, FaEnvelope, FaChartLine, FaUserCog, FaArrowRight, FaHome, FaInfoCircle, FaPhoneAlt } from 'react-icons/fa';import './style.css';
+import { FiSettings } from 'react-icons/fi';
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,26 +15,26 @@ export default function NavBar() {
         <img src="/cogrow.png" className="navbar-logo" alt="logo" />
         <ul className="navbar-list">
           <li>
-            <a href="#">Home</a>
+            <a href="/">
+              <FaHome style={{marginRight: "10px",}}/> Home
+            </a>
           </li>
           <li>
-            <a href="#">My Pitchs</a>
+            <a href="/Components/about">
+              <FaInfoCircle style={{marginRight: "10px",}}/> About Us
+            </a>
           </li>
           <li>
-            <a href="#">My Investors</a>
+            <a href="/Components/ContactUs">
+              <FaPhoneAlt style={{marginRight: "10px",}}/> Contact Us
+            </a>
           </li>
-          <li>
-            <a href="#">Investor Search</a>
-          </li>
-          {/* <li>
-            <a href="#">About</a>
-          </li> */}
         </ul>
 
-        <div className="profile-dropdown">
+        <div className="profile-dropdown" >
           <div onClick={toggleDropdown} className="profile-dropdown-btn">
             <div className="profile-imgg">
-              <FaCircle style={{color:"#54f985", width:"10px", height:'10px'}} />
+              <FaCircle style={{color:"#54f985", width:"9px", height:'9px'}} />
             </div>
             <p>
               Victoria <FaAngleDown/>
@@ -44,23 +44,23 @@ export default function NavBar() {
           {isOpen && (
             <ul className={`profile-dropdown-list ${isOpen ? 'active' : ''}`}>
               <li className="profile-dropdown-list-item">
-                <a href="#">
-                  <FaUser style={{color:"#f9ac54",marginRight:"10px"}}/> Edit Profile
+                <a href="/Investor/InvestorDetail">
+                  <FaUser style={{color:"#f9ac54",marginRight:"10px"}}/> Profile
                 </a>
               </li>
               <li className="profile-dropdown-list-item">
-                <a href="#">
+                <a href="/Investor/AccountSetting">
+                  <FaUserCog style={{color:"#f9ac54", marginRight:"10px"}}/> Account setting
+                </a>
+              </li>
+              <li className="profile-dropdown-list-item">
+                <a href="/Investor/chat">
                   <FaEnvelope style={{color:"#f9ac54", marginRight:"10px"}}/> Inbox
                 </a>
               </li>
               <li className="profile-dropdown-list-item">
                 <a href="#">
                   <FaChartLine style={{color:"#f9ac54", marginRight:"10px"}}/> Analytics
-                </a>
-              </li>
-              <li className="profile-dropdown-list-item">
-                <a href="#">
-                  <FaQuestionCircle style={{color:"#f9ac54", marginRight:"10px"}}/> Help & Support
                 </a>
               </li>
               <hr />
