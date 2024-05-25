@@ -22,12 +22,12 @@ export class UpdateUserDto {
   town?: string;
 
   @IsOptional()
-  @IsNumber()
-  city_id?: number;
+  @IsString()
+  city: string;
 
   @IsOptional()
-  @IsNumber()
-  country_id?: number;
+  @IsString()
+  country: string;
 
   @IsOptional()
   @IsString()

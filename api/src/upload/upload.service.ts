@@ -222,6 +222,19 @@ export class UploadService {
     investorId: number,
   ) {
     try {
+      // Check if the investor exists
+      const investor = await this.prisma.investor.findUnique({
+        where: { id: investorId },
+      });
+
+      if (!investor) {
+        return {
+          success: false,
+          message: 'Investor not found',
+          status: 404,
+        };
+      }
+
       const uploadResult = await cloudinary.uploader.upload(file.path, {
         folder: 'investor_profile_images',
         public_id: `${investorId}_${file.originalname}`,
@@ -250,6 +263,7 @@ export class UploadService {
         success: true,
         message: 'Investor profile image uploaded successfully',
         imageUrl,
+        status: 201,
       };
     } catch (error) {
       console.error('Error uploading investor profile image:', error);
@@ -257,6 +271,7 @@ export class UploadService {
         success: false,
         message: 'Error uploading investor profile image',
         error: error.message,
+        status: 500,
       };
     }
   }

@@ -3,8 +3,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 import {
   Investor,
   Startup,
-  Industry,
-  Stage,
   InvestedLocation,
   InvestedStage,
   InvestedIndustry,
@@ -36,13 +34,7 @@ export class MatchService {
 
     this.logger.log(`Investor preferences: ${JSON.stringify(investor)}`);
 
-    const startups = await this.prisma.startup.findMany({
-      include: {
-        industry_1: true,
-        industry_2: true,
-        stage: true,
-      },
-    });
+    const startups = await this.prisma.startup.findMany({});
 
     const matchedStartups = startups.filter((startup) =>
       this.matchStartupWithInvestor(startup, investor),
@@ -63,11 +55,7 @@ export class MatchService {
   }
 
   private matchStartupWithInvestor(
-    startup: Startup & {
-      industry_1: Industry;
-      industry_2: Industry;
-      stage: Stage;
-    },
+    startup: Startup,
     investor: Investor & {
       interested_locations: InvestedLocation[];
       interested_stages: InvestedStage[];
@@ -79,12 +67,12 @@ export class MatchService {
     const matchesIndustry =
       investor.interested_industries.some(
         (industry) =>
-          industry.industry_name === startup.industry_1?.industry_name ||
-          industry.industry_name === startup.industry_2?.industry_name,
+          industry.industry_name === startup.industry_1 ||
+          industry.industry_name === startup.industry_2,
       ) || false;
 
     const matchesStage = investor.interested_stages.some(
-      (stage) => stage.stage_name === startup.stage?.stage_name,
+      (stage) => stage.stage_name === startup.stage,
     );
 
     const matchesLocation = investor.interested_locations.some(
@@ -105,11 +93,7 @@ export class MatchService {
   }
 
   private scoreStartup(
-    startup: Startup & {
-      industry_1: Industry;
-      industry_2: Industry;
-      stage: Stage;
-    },
+    startup: Startup,
     investor: Investor & {
       interested_industries: InvestedIndustry[];
       interested_stages: InvestedStage[];
@@ -123,16 +107,14 @@ export class MatchService {
     // Industry match
     if (
       investor.interested_industries.some(
-        (industry) =>
-          industry.industry_name === startup.industry_1?.industry_name,
+        (industry) => industry.industry_name === startup.industry_1,
       )
     ) {
       score += 0.4; // Higher weight for primary industry match
     }
     if (
       investor.interested_industries.some(
-        (industry) =>
-          industry.industry_name === startup.industry_2?.industry_name,
+        (industry) => industry.industry_name === startup.industry_2,
       )
     ) {
       score += 0.2; // Lower weight for secondary industry match
@@ -141,7 +123,7 @@ export class MatchService {
     // Stage match
     if (
       investor.interested_stages.some(
-        (stage) => stage.stage_name === startup.stage?.stage_name,
+        (stage) => stage.stage_name === startup.stage,
       )
     ) {
       score += 0.3; // Moderate weight for stage match

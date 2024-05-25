@@ -16,6 +16,7 @@ import { InteractionModule } from './interaction/interaction.module';
 import { EntrepreneurModule } from './entrepreneur/entrepreneur.module';
 import { UploadModule } from './upload/upload.module';
 import { HttpModule } from '@nestjs/axios';
+// import { LookupModule } from './lookup/lookup.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { HttpModule } from '@nestjs/axios';
     InteractionModule,
     EntrepreneurModule,
     UploadModule,
+    // LookupModule,
   ],
   controllers: [ConversationController],
   providers: [],

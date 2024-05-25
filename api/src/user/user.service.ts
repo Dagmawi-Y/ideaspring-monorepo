@@ -23,37 +23,31 @@ export class UserService {
 
   async updateUserProfile(userId: number, data: UpdateUserDto) {
     try {
-      const { city_id, country_id, ...otherData } = data;
+      const { city, country, ...otherData } = data;
 
       // Get the current user to check existing associations
       const currentUser = await this.prisma.user.findUnique({
         where: { id: userId },
-        include: { city: true, country: true },
+        // include: { : true, country: true },
       });
 
       // Check if the provided city_id exists
-      const cityExists = await this.prisma.city.findUnique({
-        where: { id: city_id },
-      });
-      if (city_id && !cityExists) {
-        throw new Error(`City with ID ${city_id} does not exist`);
-      }
+      // const cityExists = await this.prisma.city.findUnique({
+      //   where: { id: city_id },
+      // });
+      // if (city_id && !cityExists) {
+      //   throw new Error(`City with ID ${city_id} does not exist`);
+      // }
 
       // Check if the user is currently associated with the provided city
-      const isCurrentlyAssociatedWithCity = currentUser.city?.id === city_id;
+      // const isCurrentlyAssociatedWithCity = currentUser.city?.id === city_id;
 
       const updatedUser = await this.prisma.user.update({
         where: { id: userId },
         data: {
           ...otherData,
-          city: city_id
-            ? { connect: { id: city_id } }
-            : isCurrentlyAssociatedWithCity
-              ? { disconnect: true }
-              : undefined,
-          country: country_id
-            ? { connect: { id: country_id } }
-            : { disconnect: true },
+          city: city,
+          country: country,
         },
       });
 

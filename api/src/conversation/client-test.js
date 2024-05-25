@@ -5,15 +5,10 @@ const serverUrl = 'http://localhost:3333'; // Modify as needed
 
 // Replace with your JWT token
 const jwtToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImVtYWlsIjoibGlua2RhZ2d5QGdtYWlsLmNvbSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE3MTM4MjM1NjIsImV4cCI6MTcxMzgyNDQ2Mn0.8ET-ECXuin0HjKM27ubjOOQCfzvZzbJ5TfGgj52bQp0';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjUsImVtYWlsIjoibGlua2RhZ2d5QGdtYWlsLmNvbSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE3MTY1OTYxMzUsImV4cCI6MTcxNjU5NzAzNX0.2EZHDn3Al8QeV1Mc6X0Yqu6_Ojz42bMxEKarI627JBM';
 
 // Create a WebSocket client connection to the server
-const socket = io(serverUrl, {
-  // Include the JWT token in the auth header
-  auth: {
-    token: `Bearer ${jwtToken}`,
-  },
-});
+const socket = io(serverUrl);
 
 // Event listener for connection
 socket.on('connect', () => {
@@ -23,7 +18,7 @@ socket.on('connect', () => {
   const conversationId = 1;
 
   // Join the room
-  socket.emit('joinRoom', { userId: 1, conversationId });
+  socket.emit('joinRoom', { userId: 2, conversationId });
 
   // Listen for the 'conversationJoined' event to confirm the user has joined the room
   socket.on('conversationJoined', (data) => {
@@ -40,9 +35,8 @@ socket.on('connect', () => {
 });
 
 // Function to send a message
+const senderId = 2; // Replace with your sender ID
 function sendMessage(conversationId, content) {
-  const senderId = 1; // Replace with your sender ID
-
   // Emit a 'sendMessage' event with the message data
   socket.emit('sendMessage', {
     senderId,

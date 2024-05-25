@@ -17,40 +17,14 @@ export class SearchService {
           { pitch_title: { contains: query } },
           { website: { contains: query } },
           { location: { contains: query } },
-
-          {
-            industry_1: {
-              industry_name: { contains: query },
-            },
-          },
-          {
-            industry_2: {
-              industry_name: { contains: query },
-            },
-          },
-          {
-            stage: {
-              stage_name: { contains: query },
-            },
-          },
-          {
-            ideal_investor_role: {
-              role_name: { contains: query },
-            },
-          },
-          {
-            tax_relief: {
-              relief_name: { contains: query },
-            },
-          },
+          { industry_1: { contains: query } },
+          { industry_2: { contains: query } },
+          { stage: { contains: query } },
+          { ideal_investor_role: { contains: query } },
+          { tax_relief: { contains: query } },
         ],
       },
       include: {
-        industry_1: true,
-        industry_2: true,
-        stage: true,
-        ideal_investor_role: true,
-        tax_relief: true,
         pitch_deal: true,
         deal_details: true,
         team_members: true,

@@ -62,17 +62,15 @@ export class StartupService {
         website,
         location,
         mobile_number: mobileNumber,
-        industry_1: industry1 ? { connect: { id: industry1 } } : undefined,
-        industry_2: industry2 ? { connect: { id: industry2 } } : undefined,
-        stage: stage ? { connect: { id: stage } } : undefined,
-        ideal_investor_role: idealInvestorRole
-          ? { connect: { id: idealInvestorRole } }
-          : undefined,
+        industry_1: industry1,
+        industry_2: industry2,
+        stage: stage,
+        ideal_investor_role: idealInvestorRole,
         previous_round_amount: previousRoundAmount,
         total_raising_amount: totalRaisingAmount,
         raised_amount: raisedAmount,
         minimum_investment: minimumInvestment,
-        tax_relief: taxRelief ? { connect: { id: taxRelief } } : undefined,
+        tax_relief: taxRelief,
       },
     });
 
@@ -92,6 +90,11 @@ export class StartupService {
   async getMyStartups(userId: number) {
     const startups = await this.prisma.startup.findMany({
       where: { user_id: userId },
+      include: {
+        pitch_deal: true,
+        deal_details: true,
+        images_videos: true,
+      },
     });
     return startups;
   }
@@ -100,11 +103,6 @@ export class StartupService {
     const startup = await this.prisma.startup.findUnique({
       where: { id },
       include: {
-        industry_1: true,
-        industry_2: true,
-        stage: true,
-        ideal_investor_role: true,
-        tax_relief: true,
         pitch_deal: true,
         deal_details: true,
         team_members: true,
@@ -147,23 +145,15 @@ export class StartupService {
         website: dto.website,
         location: dto.location,
         mobile_number: dto.mobileNumber,
-        industry_1: dto.industry1
-          ? { connect: { id: dto.industry1 } }
-          : undefined,
-        industry_2: dto.industry2
-          ? { connect: { id: dto.industry2 } }
-          : undefined,
-        stage: dto.stage ? { connect: { id: dto.stage } } : undefined,
-        ideal_investor_role: dto.idealInvestorRole
-          ? { connect: { id: dto.idealInvestorRole } }
-          : undefined,
+        industry_1: dto.industry1,
+        industry_2: dto.industry2,
+        stage: dto.stage,
+        ideal_investor_role: dto.idealInvestorRole,
         previous_round_amount: dto.previousRoundAmount,
         total_raising_amount: dto.totalRaisingAmount,
         raised_amount: dto.raisedAmount,
         minimum_investment: dto.minimumInvestment,
-        tax_relief: dto.taxRelief
-          ? { connect: { id: dto.taxRelief } }
-          : undefined,
+        tax_relief: dto.taxRelief,
       },
     });
 
@@ -579,11 +569,6 @@ export class StartupService {
         startup: {
           include: {
             user: true,
-            industry_1: true,
-            industry_2: true,
-            stage: true,
-            ideal_investor_role: true,
-            tax_relief: true,
             // ... other relevant startup relations
           },
         },

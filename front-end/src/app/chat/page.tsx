@@ -1,8 +1,8 @@
-import React from "react";
-import "./style.css";
-import Nav from "../chat/nav/page";
-import ChatBody from "./ChatBody/page";
-import Navbar from "../startup/NavBar/page"
+import React from 'react';
+import './style.css';
+import Nav from '../chat/nav/page';
+import ChatBody from './ChatBody/page';
+import Navbar from '../startup/NavBar/page';
 
 function App() {
   return (

@@ -1,6 +1,7 @@
 import {
   BadRequestException,
   ForbiddenException,
+  HttpStatus,
   Injectable,
   NotFoundException,
   UnauthorizedException,
@@ -109,6 +110,7 @@ export class AuthService {
         await this.sendVerificationEmail(user.email, verificationToken);
 
         return {
+          statusCode: HttpStatus.OK,
           message: 'User registered successfully. Please verify your email.',
         };
       });

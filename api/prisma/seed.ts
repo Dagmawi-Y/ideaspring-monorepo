@@ -35,69 +35,6 @@ async function main() {
     });
   }
 
-  console.log('Investor types created successfully.');
-  // Investor Roles
-  await prisma.investorRole.createMany({
-    data: [
-      { role_name: 'Silent' },
-      { role_name: 'Daily Involvement' },
-      { role_name: 'Weekly Involvement' },
-      { role_name: 'Monthly Involvement' },
-      { role_name: 'Any' },
-    ],
-  });
-  console.log('Investor roles created successfully.'); // Added console log
-
-  // Tax Relief Options
-  await prisma.taxRelief.createMany({
-    data: [{ relief_name: 'SEIS' }, { relief_name: 'EIS' }],
-  });
-  console.log('Tax relief options created successfully.'); // Added console log
-
-  // Startup Stages
-  await prisma.stage.createMany({
-    data: [
-      { stage_name: 'Achieving Sales' },
-      { stage_name: 'Breaking Even' },
-      { stage_name: 'MVP/Finished Product' },
-      { stage_name: 'Other' },
-      { stage_name: 'Pre-Startup/R&D' },
-      { stage_name: 'Profitable' },
-    ],
-  });
-  console.log('Startup stages created successfully.'); // Added console log
-
-  // Industries
-  await prisma.industry.createMany({
-    data: [
-      { industry_name: 'Agriculture' },
-      { industry_name: 'Business Services' },
-      { industry_name: 'Education & Training' },
-      { industry_name: 'Energy & Natural Resources' },
-      { industry_name: 'Entertainment & Leisure' },
-      { industry_name: 'Fashion & Beauty' },
-      { industry_name: 'Finance' },
-      { industry_name: 'Food & Beverage' },
-      { industry_name: 'Hospitality, Restaurants & Bars' },
-      { industry_name: 'Manufacturing & Engineering' },
-      { industry_name: 'Media' },
-      { industry_name: 'Medical & Sciences' },
-      { industry_name: 'Personal Services' },
-      { industry_name: 'Products & Inventions' },
-      { industry_name: 'Property' },
-      { industry_name: 'Retail' },
-      { industry_name: 'Sales & Marketing' },
-      { industry_name: 'Software' },
-      { industry_name: 'Technology' },
-      { industry_name: 'Transportation' },
-    ],
-  });
-  console.log('Industries created successfully.');
-
-  // Countries and Cities (Example)
-  await prisma.country.create({ data: { name: 'Ethiopia' } });
-  await prisma.city.create({ data: { name: 'Addis Ababa' } });
-
   // Roles
   const roles = [Role.Engager, Role.Entrepreneur, Role.Investor, Role.Admin];
 
@@ -260,8 +197,8 @@ async function main() {
       profileImage: 'https://example.com/admin_profile.jpg',
       bannerImage: 'https://example.com/admin_banner.jpg',
       town: 'Admintown',
-      city: { connect: { name: 'Addis Ababa' } },
-      country: { connect: { name: 'Ethiopia' } },
+      city: 'Addis Ababa',
+      country: 'Ethiopia',
       phoneNumber: '+1234567890',
       mobileNumber: '+0987654321',
       bio: 'Platform administrator.',
@@ -275,8 +212,8 @@ async function main() {
       profileImage: 'https://example.com/entrepreneur1_profile.jpg',
       bannerImage: 'https://example.com/entrepreneur1_banner.jpg',
       town: 'Startuptown',
-      city: { connect: { name: 'Addis Ababa' } },
-      country: { connect: { name: 'Ethiopia' } },
+      city: 'Addis Ababa',
+      country: 'Ethiopia',
       phoneNumber: '+2468101214',
       mobileNumber: '+13579111315',
       bio: 'Building the next big thing.',
@@ -292,8 +229,8 @@ async function main() {
       profileImage: 'https://example.com/engager2_profile.jpg',
       bannerImage: 'https://example.com/engager2_banner.jpg',
       town: 'Engagementville',
-      city: { connect: { name: 'Addis Ababa' } },
-      country: { connect: { name: 'Ethiopia' } },
+      city: 'Addis Ababa',
+      country: 'Ethiopia',
       phoneNumber: '+4812161922',
       mobileNumber: '+371114172023',
       bio: 'Supporting innovation and growth.',
@@ -307,8 +244,8 @@ async function main() {
       profileImage: 'https://example.com/investor2_profile.jpg',
       bannerImage: 'https://example.com/investor2_banner.jpg',
       town: 'Investment City',
-      city: { connect: { name: 'Addis Ababa' } },
-      country: { connect: { name: 'Ethiopia' } },
+      city: 'Addis Ababa',
+      country: 'Ethiopia',
       phoneNumber: '+5012345678',
       mobileNumber: '+6098765432',
       bio: 'Seeking promising opportunities.',

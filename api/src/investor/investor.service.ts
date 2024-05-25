@@ -273,7 +273,7 @@ export class InvestorService {
     return newLanguage;
   }
 
-  async addKeyword(investorId: number, keywordDto: dto.KeywordDto) {
+  async addTag(investorId: number, keywordDto: dto.KeywordDto) {
     const investor = await this.prisma.investor.findUnique({
       where: { id: investorId },
     });
@@ -282,7 +282,7 @@ export class InvestorService {
       throw new NotFoundException(`Investor with ID ${investorId} not found`);
     }
 
-    const newKeyword = await this.prisma.keyword.create({
+    const newKeyword = await this.prisma.tag.create({
       data: {
         ...keywordDto,
         investor_id: investorId,

@@ -109,9 +109,9 @@ export class InvestorCompanyDto {
   @IsNumber()
   invested_amount?: number;
 
-  @IsNumber()
-  industry_id?: number;
+  @IsString()
+  industry: string;
 
-  @IsNumber()
-  stage_id?: number;
+  @IsString()
+  stage: string;
 }

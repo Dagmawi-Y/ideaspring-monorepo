@@ -18,20 +18,20 @@ export class UpdateStartupDto {
   mobileNumber?: string;
 
   @IsOptional()
-  @IsNumber()
-  industry1?: number;
+  @IsString()
+  industry1?: string;
 
   @IsOptional()
-  @IsNumber()
-  industry2?: number;
+  @IsString()
+  industry2?: string;
 
   @IsOptional()
-  @IsNumber()
-  stage?: number;
+  @IsString()
+  stage?: string;
 
   @IsOptional()
-  @IsNumber()
-  idealInvestorRole?: number;
+  @IsString()
+  idealInvestorRole?: string;
 
   @IsOptional()
   @IsNumber()
@@ -50,6 +50,6 @@ export class UpdateStartupDto {
   minimumInvestment?: number;
 
   @IsOptional()
-  @IsNumber()
-  taxRelief?: number;
+  @IsString()
+  taxRelief?: string;
 }

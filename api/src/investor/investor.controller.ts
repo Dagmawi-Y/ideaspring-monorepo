@@ -278,7 +278,7 @@ export class InvestorController {
     @Param('id', ParseIntPipe) investorId: number,
     @Body() keywordDto: dto.KeywordDto,
   ) {
-    return this.investorService.addKeyword(investorId, keywordDto);
+    return this.investorService.addTag(investorId, keywordDto);
   }
 
   @Post(':id/invested-companies')
@@ -319,5 +319,4 @@ export class InvestorController {
   ) {
     return this.investorService.addInvestorType(investorId, investorTypeName);
   }
-
 }
