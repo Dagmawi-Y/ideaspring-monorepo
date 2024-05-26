@@ -42,7 +42,7 @@
   padding: 1rem 2rem;
   outline: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--white);
   background-color: var(--secondary-color);
   border-radius: 5px;
@@ -86,7 +86,7 @@ nav {
 }
 
 .nav__logo {
-  max-width: 150px;
+  max-width: 190px;
 }
 
 .nav__links {

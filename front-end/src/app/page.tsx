@@ -36,8 +36,8 @@ export default function Home() {
     <body>
       <nav>
         <div className="nav__logo">
-          <a href="#">
-            <img src="/cogrow.png" alt="logo" />
+          <a href="/">
+            <img src="/flogo.png" alt="logo" />
           </a>
         </div>
         <ul className="nav__links">

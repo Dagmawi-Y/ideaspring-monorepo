@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/Admin/components/Subscriptions/Subscriptions.jsx", "src/app/Admin/components/Savings/Savings.jsx", "src/app/Admin/components/Report/Report.jsx", "src/app/Admin/context/sidebarContext.jsx", "src/app/Admin/data/data.js", "src/app/Admin/layout/Content/Content.jsx", "src/app/Admin/reducer/sidebarReducer.js", "src/app/Admin/utils/images.js"],
   "exclude": ["node_modules"]
 }
