@@ -11,7 +11,7 @@ import FormTwoStepThree from "./formthree/page"
 import FormTwoStepFour from "./Industries/page"
 import FormTwoStepFive from "./last/page"
 import './style.css'; 
-import Navbar from "./NavBar/page"
+import Navbar from "../NavForm/page"
 
 const Home = () => {
   const [selectedForm, setSelectedForm] = useState(null);
@@ -58,7 +58,8 @@ const Home = () => {
     <div>
       <Navbar/>
       {currentStep === -1 ? (
-        <div>
+        <div >
+          <div className='cont'>
           <div className="h1">What type of investor are you?</div>
           <div className="h2">
             For the purposes of the Financial Services and Markets Act (Financial Promotion) Order 2005, I declare that I
@@ -99,6 +100,7 @@ const Home = () => {
                    </div>
                  </div>
                </div>
+             </div>
              </div>
              <div className="button-container" style={{ justifyContent: "space-between" }}>
                <button className="icon-button" onClick={handleBack} disabled={true}>

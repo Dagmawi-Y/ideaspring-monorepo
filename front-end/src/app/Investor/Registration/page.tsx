@@ -1,7 +1,7 @@
 'use client'
 import {useState} from 'react';
 import "./style.css"
-import Navbar from "../nav/page"
+import Navbar from "../NavForm/page"
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Link from 'next/link';
@@ -104,7 +104,7 @@ const Login = () => {
 
   return (
     <>
-      {/* <div className="Navbar"><Navbar/></div> */}
+      <div style={{alignItems:"flex-start",}} ><Navbar/></div>
       <div className="container">
         <div className="box">
           <div className="box-login" id="login">

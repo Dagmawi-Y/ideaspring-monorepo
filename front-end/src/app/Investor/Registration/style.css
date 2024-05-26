@@ -23,6 +23,7 @@ background-color: #fff;    /* background: url("images/99.jpg"); */
     justify-content: center;
     align-items: center;
     height: max-content;
+    margin-top: 50px;
 }
 .box{
     display: flex;

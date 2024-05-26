@@ -1,12 +1,15 @@
 'use client'
 import { useState } from "react";
-import Products from "./startups/page";
-import products from "./db/data";
+import Featured from "./startups/page";
+import features from "./db/data";
+import Tech from "./startups/page";
+import techs from "./db2/data";
 import Card from "./Components/Card";
 import "./style1.css";
 import { css } from 'styled-jsx/css'
 import Top from "./Top/page"
-
+import Property from "./startups/page";
+import properties from "./db3/data";
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -17,7 +20,7 @@ function App() {
     setQuery(event.target.value);
   };
 
-  const filteredItems = products.filter(
+  const filteredItems = features.filter(
     (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
 
@@ -31,8 +34,8 @@ function App() {
     setSelectedCategory(event.target.value);
   };
 
-  function filteredData(products, selected, query) {
-    let filteredProducts = products;
+  function filteredData(features, selected, query) {
+    let filteredProducts = features;
 
     // Filtering Input Items
     if (query) {
@@ -75,7 +78,9 @@ function App() {
     );
   }
 
-  const result = filteredData(products, selectedCategory, query);
+  const result = filteredData(features, selectedCategory, query);
+  const result2 = filteredData(techs, selectedCategory, query);
+  const result3 = filteredData(properties, selectedCategory, query);
   const { className, styles } = css`
     body {
       font-family: ' sans-serif';
@@ -86,7 +91,12 @@ function App() {
     <>
     <Top/>
     <div className="ola">
-      <Products result={result} />
+      <p style={{color:"black",marginLeft: "245px",fontSize:"19px"}}>Featured</p>
+      <Featured result={result} />
+      <p style={{color:"black",marginLeft: "245px",fontSize:"19px", marginTop: "70px",}}>Technology</p>
+      <Tech result={result2} />
+      <p style={{color:"black",marginLeft: "245px",fontSize:"19px", marginTop: "70px",}}>Property</p>
+      <Property result={result3} />
     </div>
     </>
   );

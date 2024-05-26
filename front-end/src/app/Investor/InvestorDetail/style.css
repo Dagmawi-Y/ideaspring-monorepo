@@ -1,8 +1,9 @@
-.container {
+.containerd {
     display: flex;
     justify-content: center;
     padding: 20px;
     background: #ffffff;
+    margin-top: 100px;
   }
   
   .profile {
@@ -77,7 +78,7 @@
   }
   
   .aboutMe {
-    margin-top: 90px;
+    margin-top: 20px;
   }
   .expertise{
     margin-top: 40px;

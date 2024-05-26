@@ -4,12 +4,12 @@ import "./style.css"
 import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaGlobe } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicroscope, faSolarPanel, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-import Nav from "../NavBar/page"
+import Nav from "../../nav/page"
 export default function Profile() {
   return (
     <>
     <Nav/>
-    <div className="container">
+    <div className="containerd">
       <Head>
         <title>Profile Page</title>
       </Head>
@@ -53,7 +53,6 @@ export default function Profile() {
         </div>
         </div>
         <div className="rightColumn">
-          <button className="nudgeButton">Nudge Amela</button>
 
           <div className="aboutMe">
             <h2>About Me</h2>

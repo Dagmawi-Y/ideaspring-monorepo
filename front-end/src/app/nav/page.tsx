@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { FaMoneyBillAlt, FaHandHoldingUsd, FaEnvelope, FaQuestionCircle, FaCaretDown, FaUserCircle } from 'react-icons/fa';
 import styles from './style.css'; // Assuming style.css is your CSS file
-import { BiMoney,BiLineChart, BiEnvelope, BiCoin, BiChevronDown, BiInfoCircle,BiCoinStack } from 'react-icons/bi';
+import { BiLineChart,BiMoney, BiEnvelope, BiCoin, BiChevronDown, BiInfoCircle,BiCoinStack } from 'react-icons/bi';
 
 export default function Home() {
   const [investDropdown, setInvestDropdown] = useState(false);
@@ -66,13 +66,14 @@ export default function Home() {
           <input type="text" placeholder="Search..." className="searchInput" />
         </div> */}
         <div className="navLinks">
-          <div className="navItem" onClick={toggleInvestDropdown}>
+          {/* <div className="navItem" onClick={toggleInvestDropdown}>
             <BiCoinStack className='icon'/>Invest <BiChevronDown />
             {investDropdown && (
               <div className="dropdown">
-                <a href="#">Option 1</a>
-                <a href="#">Option 2</a>
-                <a href="#">Option 3</a>
+                <a href="/Investor/myPortfolio">My Portfolio</a>
+                <a href="#">My Matches</a>
+                <a href="#">Explore</a>
+                <a href="#">Search</a>
               </div>
             )}
           </div>
@@ -85,6 +86,12 @@ export default function Home() {
                 <a href="#">Option 3</a>
               </div>
             )}
+          </div> */}
+          <div className='navItem'>
+          <a href="/Investor"><BiCoinStack className='icon'/>Invest</a>
+          </div>
+          <div className='navItem'>
+          <a href="#"><BiLineChart className='icon' /> Analytics</a>
           </div>
           <div className='navItem'>
           <a href="#"><BiEnvelope className='icon'/> Messages</a>
@@ -96,7 +103,8 @@ export default function Home() {
             <FaUserCircle className="profileIcon" />
             {profileDropdown && (
               <div className="dropdown profileDropdown"> {/* Differentiate profile dropdown */}
-                <a href="#">Profile Settings</a>
+                <a href="/Investor/AccountSetting">Account Settings</a>
+                <a href="/Investor/InvestorDetail">Profile</a>
                 <a href="#">Logout</a>
               </div>
             )}

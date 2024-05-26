@@ -22,7 +22,7 @@ const Form = () => {
   };
 
   return (
-    <div className="form-container" onSubmit={handleSubmit}>
+    <div className="form-container" style={{height:"375px"}} onSubmit={handleSubmit}>
       <h1 className='h1'>Where are you based?</h1>
       <h2 className='h2'>Your location will help us match you with investment opportunities in your area.</h2>
       <div className="form-group">

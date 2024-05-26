@@ -7,7 +7,7 @@ import Search from "../InvestorFirstPage/page"
 import Explore from "../Explore/page"
 import Match from "../Match/page"
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('Search');
+  const [activeTab, setActiveTab] = useState('Explore');
 
   return (
     <div className="container6">
