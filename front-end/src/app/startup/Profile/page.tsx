@@ -14,9 +14,9 @@ export default function Home() {
 
       <nav className="nav">
         <ul>
-          <li className="active">Overview</li>
-          <li>Pitch Details</li>
-          <li>The Team</li>
+          <li className="active"><a href='#Overview'>Overview</a></li>
+          <li><a href="#Highlights">Highlights</a></li>
+          <li><a href='#Short'>Short Summary</a></li>
           <li>Documents</li>
         </ul>
         <div className="buttons">
@@ -29,13 +29,13 @@ export default function Home() {
           <p>The content of this promotion has not been approved by an authorised person within the meaning of the Financial Services and Markets Act 2000. Reliance on this promotion for the purpose of engaging in any investment activity may expose an individual to a significant risk of losing all of the property or other assets invested. Investors should carry out their own due diligence and take professional advice where necessary.</p>
         </div>
 
-        <div className="mainContent">
+        <div className="mainContent" id='Short'>
           <div className="summary">
             <h2>Short Summary</h2>
             <p>Launching South East Asia's first and most profitable practical business school, focused solely on business owners, with a groundbreaking plan to be the first in the country to list publicly. A proven EMBA course founded 5 years ago. Website is LIVE ✅</p>
           </div>
 
-          <div className="highlights">
+          <div className="highlights" id="Highlights">
             <h2>Highlights</h2>
             <ul>
               <li><strong>Practical Focus:</strong> EMBA courses emphasize hands-on, real-world training.</li>
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         <aside className="sidebar">
-          <h3>Overview</h3>
+          <h3 id="Overview">Overview</h3>
           <table>
             <tbody>
               <tr>

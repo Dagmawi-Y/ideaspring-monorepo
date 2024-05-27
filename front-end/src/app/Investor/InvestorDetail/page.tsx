@@ -29,14 +29,14 @@ export default function Profile() {
             Amela O. <span className="flag">🇬🇧</span>
           </h1>
           <p className="location">
-          <FaMapMarkerAlt /> London, United Kingdom
+          <FaMapMarkerAlt /> Addis Ababa, Ethiopia
           </p>
           </div>
           </div>
           <div style={{justifyContent:"flex-start"}}>
           <div className="investmentRange">
             <h2>Investment Range</h2>
-            <p>£0 - £25,000</p>
+            <p>0 Birr - 25,000 Birr</p>
           </div>
 
           <div className="details">
@@ -47,7 +47,7 @@ export default function Profile() {
               <FaUser /> Angel Investor
             </p>
             <p>
-              <FaGlobe /> United Kingdom
+              <FaGlobe /> Ethiopia
             </p>
           </div>
         </div>

@@ -90,10 +90,13 @@
     padding: 0;
   }
   
-  .highlights ul li {
+  .highlights ul li a{
     margin-bottom: 10px;
   }
-  
+  li a{
+    text-decoration: none;
+    color: black;
+  }
   .sidebar {
     flex: 1;
     min-width: 250px;
