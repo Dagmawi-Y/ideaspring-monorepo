@@ -1,0 +1,112 @@
+.containerx {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbars {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+    background-color: white;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
+    right: 5px;
+  }
+  
+  .logoContainern{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+  }
+  
+  .navItem , .navItem a{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 12.3px;
+  }
+  
+  .navItem:hover {
+    color: #f9ac54;
+  }
+  .navItem a:hover {
+    color: #f9ac54;
+  }
+  
+  .navItem a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 10px; /* Adjust spacing from the nav item */
+    padding: 10px 0;
+    width: 200px;
+  }
+  
+  .dropdown a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .navLinks .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profileCircle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    font-weight: bold;
+  }
+  .profileIcon{
+    width: 40px;
+    height: 40px;
+    color: #f9ac54;
+  }
+  .profileIcon:hover{
+    color: #aaa;
+  }
+  .icon{
+    height: 29px;
+    width: 29px;
+  }

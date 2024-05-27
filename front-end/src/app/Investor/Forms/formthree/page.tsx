@@ -33,7 +33,14 @@ const Form = () => {
         <label htmlFor="country">Country</label>
         <select id="country" name="country" value={country} onChange={handleChange} style={{ height: '60px' , width:'470px'}}>
           <option value="">Select Country</option>
-          <option value="UK">United Kingdom</option>
+          <option>Addis Ababa (capital and largest city)</option> 
+          <option>Dire Dawa</option> 
+          <option>Mekelle</option> 
+          <option>Bahir Dar</option> 
+          <option>Adama</option> 
+          <option>Jigjiga</option> 
+          <option>Dessie</option> 
+          <option>Sodo</option>
           {/* Add more country options here */}
         </select>
       </div>

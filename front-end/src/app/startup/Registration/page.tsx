@@ -1,9 +1,9 @@
 'use client'
 import {useState} from 'react';
 import "./style.css"
-import Navbar from "../nav/page"
+import Navbar from "../../Investor/NavForm/page"
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye,  } from 'react-icons/fa';
 import Link from 'next/link';
 
 
@@ -104,7 +104,7 @@ const Login = () => {
 
   return (
     <>
-      {/* <div className="Navbar"><Navbar/></div> */}
+      <div style={{alignItems:"flex-start",}} ><Navbar/></div>
       <div className="container">
         <div className="box">
           <div className="box-login" id="login">
@@ -139,8 +139,7 @@ const Login = () => {
                 <label htmlFor="logPassword">Password</label>
                 <div className="eye-area">
                   <div className="eye-box" onClick={toggleLogPasswordVisibility}>
-                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-20px",}}/>
-                  <FaEyeSlash className="icon" id="eye-slash" style={{color:"#fea808"}}/>
+                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-10px",}}/>
                   </div>
                 </div>
                 {displayValidation && logPassword === '' && (
@@ -158,7 +157,7 @@ const Login = () => {
                 <label htmlFor="formCheck">Remember Me</label>
               </div>
               <div className="input-field">
-              <Link href='startup/pitch'>
+              <Link href='/startup/pitch'>
                 <input
                   type="submit"
                   className="input-submit"
@@ -222,8 +221,7 @@ const Login = () => {
                 <label htmlFor="regPassword">Password</label>
                 <div className="eye-area">
                   <div className="eye-box" onClick={toggleRegPasswordVisibility}>
-                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-20px"}}/>
-                  <FaEyeSlash className="icon" id="eye-slash" style={{color:"#f9d48e"}} />
+                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-10px"}}/>
                   </div>
                 </div>
                 {displayValidation && regPassword === '' && (
@@ -250,7 +248,7 @@ const Login = () => {
                   <span className="validation-message" > Please accept the terms and conditions.</span>
                 )}
               <div className="input-field">
-                <a href='/pitch'>
+                <a href='/startup/pitch'>
                 <input
                   type="submit"
                   className="input-submit"

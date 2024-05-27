@@ -4,7 +4,7 @@ import "./style.css"
 import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaGlobe } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicroscope, faSolarPanel, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-import Nav from "../../nav/page"
+import Nav from "../nav/page"
 export default function Profile() {
   return (
     <>

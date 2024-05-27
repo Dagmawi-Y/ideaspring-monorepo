@@ -5,7 +5,7 @@ import products from "./db/data";
 import Card from "./Components/Card";
 import "./style1.css";
 import { css } from 'styled-jsx/css'
-import NavBar from"../nav/page"
+import NavBar from"../Investor/nav/page"
 import Navigation from "./Navigation/page";
 import Recommended from "./Recommended/page";
 

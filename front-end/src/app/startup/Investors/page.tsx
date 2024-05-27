@@ -77,7 +77,7 @@ function App() {
     <div className="ola">
       {/* <Sidebar handleChange={handleChange} /> */}
       <Navigation query={query} handleInputChange={handleInputChange} />
-      <h1 style={{textAlign:"center",marginLeft: "200px", color:"#616161",fontWeight: 'normal'}}>Find Angel in Ethiopia & Worldwide</h1>
+      <h1 style={{textAlign:"center",marginLeft: "200px", color:"#616161",fontWeight: 'normal'}}>Find Angel Investors in Ethiopia & Worldwide</h1>
     <h4 style={{textAlign:"center",marginLeft: "200px", color:"#616161",fontWeight: 'normal',}}>How do I connect with angel investors? To meet investors in Ethiopia and Internationally, you just need to add a pitch using our easy-to-follow template. It's really simple and investors all around the world are waiting to view your idea.</h4>
       {/* <Recommended handleClick={handleClick} /> */}
       <Products result={result} />

@@ -10,9 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="header">
-        <Image src="/logo.png" alt="McKenzie Business School" width={200} height={100} />
-      </header>
+        <img src="/mount.jpg" alt="banner" style={{width:"100%",height:"200px"}} />
 
       <nav className="nav">
         <ul>
@@ -23,7 +21,6 @@ export default function Home() {
         </ul>
         <div className="buttons">
           <button className="getStarted">Get Started</button>
-          <button className="login">Login</button>
         </div>
       </nav>
 
@@ -56,19 +53,19 @@ export default function Home() {
             <tbody>
               <tr>
                 <td>Target</td>
-                <td>£150,000</td>
+                <td>150,000 Birr</td>
               </tr>
               <tr>
                 <td>Minimum</td>
-                <td>£1,000</td>
+                <td>1,000 Birr</td>
               </tr>
               <tr>
                 <td>Investment Raised</td>
-                <td>£4,000</td>
+                <td>4,000 Birr</td>
               </tr>
               <tr>
                 <td>Previous Rounds</td>
-                <td>£0</td>
+                <td>0 Birr</td>
               </tr>
               <tr>
                 <td>Stage</td>

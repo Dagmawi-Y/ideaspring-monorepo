@@ -1,5 +1,5 @@
 .container {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     padding: 0;
     margin: 0;
   }
@@ -34,8 +34,8 @@
   
   .nav ul li:hover,
   .nav ul .active {
-    border-bottom: 2px solid #0070f3;
-    color: #0070f3;
+    border-bottom: 2px solid #f9ac54;
+    color: #f9ac54;
   }
   
   .nav .buttons {
@@ -44,7 +44,7 @@
   }
   
   .nav .getStarted {
-    background-color: #0070f3;
+    background-color: #f9ac54;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -124,7 +124,7 @@
   }
   
   .sidebar .questionBox button {
-    background-color: #0070f3;
+    background-color: #f9ac54;
     color: white;
     border: none;
     padding: 10px 20px;

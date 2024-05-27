@@ -139,8 +139,7 @@ const Login = () => {
                 <label htmlFor="logPassword">Password</label>
                 <div className="eye-area">
                   <div className="eye-box" onClick={toggleLogPasswordVisibility}>
-                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-20px",}}/>
-                  <FaEyeSlash className="icon" id="eye-slash" style={{color:"#fea808"}}/>
+                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-10px",}}/>
                   </div>
                 </div>
                 {displayValidation && logPassword === '' && (
@@ -222,8 +221,7 @@ const Login = () => {
                 <label htmlFor="regPassword">Password</label>
                 <div className="eye-area">
                   <div className="eye-box" onClick={toggleRegPasswordVisibility}>
-                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-20px"}}/>
-                  <FaEyeSlash className="icon" id="eye-slash" style={{color:"#f9d48e"}} />
+                  <FaEye className="icon" id="eye" style={{color:"#fea808", marginTop: "-10px"}}/>
                   </div>
                 </div>
                 {displayValidation && regPassword === '' && (

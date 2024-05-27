@@ -1,5 +1,5 @@
 "use client"
-import Nav from "../../nav/page"
+import Nav from "../nav/page"
 import "./style1.css"
 import { useState } from 'react';
 import Contactinfo from "./ContactInfo/page"

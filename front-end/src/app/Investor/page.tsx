@@ -1,4 +1,4 @@
-import Nav from "../nav/page"
+import Nav from "./nav/page"
 import Navigation from "./Navigation/page"
 export default function Startup(){
     return(

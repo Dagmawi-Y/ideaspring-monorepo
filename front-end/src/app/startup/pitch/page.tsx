@@ -4,7 +4,7 @@ import "./styl.css";
 import { FaBars, FaTimes, FaQrcode, FaLink, FaStream, FaCalendar, FaQuestionCircle, FaSlidersH, FaEnvelope } from 'react-icons/fa';
 import Form from "./CompanyInformation/page"; 
 import Pitch from "./PitchandDeal/page"
-import NavBar from "../../Investor/NavBar/page"
+import NavBar from "../nav/page"
 import Team from "./Team/page"
 import Picture from "./image/page"
 import Document from "./document/page"
@@ -24,6 +24,7 @@ const Sidebar = () => {
   return (
     <>
     <NavBar/>
+    <div style={{marginTop:"60px"}}>
       <input type="checkbox" id="check" />
       {/* <label htmlFor="check">
         {expanded ? (
@@ -86,7 +87,7 @@ const Sidebar = () => {
       {activeLink === 'Team' && <Team />}
       {activeLink === 'images' && <Picture />}
       {activeLink === 'document' && <Document />}
-      
+      </div>
     </>
   );
 };

@@ -80,7 +80,7 @@ function SelfCertificationForm() {
       <div className="question">
         {/* <p>If you meet <b>condition A, B or C below</b>, you may choose to be classified as a self-certified sophisticated investor for the purposes of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005.</p> */}
         <p>In the last financial year, did you have:</p>
-        <p>A) <b>An annual income of £100,000 or more?</b> Income does NOT include any one-off pension withdrawals.</p>
+        <p>A) <b>An annual income of 100,000 Birr or more?</b> Income does NOT include any one-off pension withdrawals.</p>
         <div className="radio-buttons">
           <label htmlFor="workedInFinanceYes">Yes</label>
           <input
@@ -111,7 +111,7 @@ function SelfCertificationForm() {
             value={businessName}
             onChange={handleBusinessNameChange}
           />
-          <p>B) <b>Net assets of £250,000 or more? </b>Net assets do NOT include: your home (primary residence), any loan secured on it or any equity released from it; your pension (or any pension withdrawals) or any rights under insurance contracts. Net assets are total assets minus any debts you owe.</p>
+          <p>B) <b>Net assets of 250,000 Birr or more? </b>Net assets do NOT include: your home (primary residence), any loan secured on it or any equity released from it; your pension (or any pension withdrawals) or any rights under insurance contracts. Net assets are total assets minus any debts you owe.</p>
           <div className="radio-buttons">
             <label htmlFor="heldDirectorPositionYes">Yes</label>
             <input
@@ -133,7 +133,7 @@ function SelfCertificationForm() {
           </div>
           {heldDirectorPosition && (
             <div className="annual-turnover">
-              <label htmlFor="annualTurnover">If yes, please specify your net assets (as defined above) to the nearest £100,000 in the last financial year</label>
+              <label htmlFor="annualTurnover">If yes, please specify your net assets (as defined above) to the nearest 100,000 Birr in the last financial year</label>
               <input
                 type="text"
                 id="annualTurnover"
