@@ -319,7 +319,7 @@ export const mockTransactions = [
 
 export const mockBarData = [
   {
-    country: "AD",
+    a: "AD",
     startups: 96,
     startupsColor: "hsl(296, 70%, 50%)",
     Investors: 72,
@@ -328,7 +328,7 @@ export const mockBarData = [
     EngagersColor: "hsl(340, 70%, 50%)",
   },
   {
-    country: "AE",
+    a: "AE",
     startups: 28,
     startupsColor: "hsl(111, 70%, 50%)",
     Investors: 58,
@@ -337,7 +337,7 @@ export const mockBarData = [
     EngagersColor: "hsl(275, 70%, 50%)",
   },
   {
-    country: "AF",
+    a: "AF",
     startups: 23,
     startupsColor: "hsl(96, 70%, 50%)",
     Investors: 34,
@@ -346,7 +346,7 @@ export const mockBarData = [
     EngagersColor: "hsl(256, 70%, 50%)",
   },
   {
-    country: "AG",
+    a: "AG",
     startups: 52,
     startupsColor: "hsl(326, 70%, 50%)",
     Investors: 43,
@@ -355,7 +355,7 @@ export const mockBarData = [
     EngagersColor: "hsl(9, 70%, 50%)",
   },
   {
-    country: "AI",
+    a: "AI",
     startups: 80,
     startupsColor: "hsl(325, 70%, 50%)",
     Investors: 112,
@@ -364,7 +364,7 @@ export const mockBarData = [
     EngagersColor: "hsl(285, 70%, 50%)",
   },
   {
-    country: "AL",
+    a: "AL",
     startups: 111,
     startupsColor: "hsl(334, 70%, 50%)",
     Investors: 167,
@@ -373,7 +373,7 @@ export const mockBarData = [
     EngagersColor: "hsl(76, 70%, 50%)",
   },
   {
-    country: "AM",
+    a: "AM",
     startups: 47,
     startupsColor: "hsl(141, 70%, 50%)",
     Investors: 158,
